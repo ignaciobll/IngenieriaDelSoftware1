@@ -10,7 +10,11 @@
 \usepackage{pgfplots}
 \usetikzlibrary{positioning}
 
-\usepackage{vhistory}
+\usepackage{tikz}
+
+\usepackage{cite}
+
+\usepackage{textcomp}
 
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -26,6 +30,7 @@
 \usepackage[hidelinks]{hyperref}
 
 % \pagestyle{headings}
+\bibliographystyle{plain}
 
 \addto\captionsspanish{\renewcommand{\chaptername}{Bloque}}
 
@@ -65,10 +70,13 @@
 \chapter{Objetos}
 \label{chap:objetos}
 \input{objetos}
+
 \chapter{Arquitectura}
 \label{chap:arquitectura}
+\input{arquitectura}
 
-Como bien se comentó en el bloque \ref{chap:requisitos}
+
+\bibliography{IS1apuntes}
 
 \printindex
 \end{document}
