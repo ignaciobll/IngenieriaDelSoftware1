@@ -1,0 +1,219 @@
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "IS1apuntes"
+%%% End:
+
+\section{Introducción a la arquitectura}
+\label{sec:arquitectura:intro}
+
+Requerimientos \textrightarrow Diseño \textrightarrow Construcción
+\textrightarrow Pruebas \textrightarrow Implantación.
+\\
+
+La arquitectura de Software de un sistema es el \textbf{conjunto} de 
+\textbf{estructuras} necesarias para \textbf{razonar} sobre el
+sistema. Relaciona distintos elementos de software como son los
+objetos o los hilos de ejecución; el modelo del sistema,
+los diagramas, la lógica; o las entidades físicas como los nodos donde
+se ejecutará Software.
+
+Desde una perspectiva de alto nivel, la arquitectura de Software cubre
+diferentes componentes del sistema. Tendrá en cuenta los
+requerimientos y fines del sistema, pero a la vez la creación del
+modelo, las dependencias y los escenarios de uso. Es decir, la
+arquitectura de software maneja sin encargarse de la implementación
+final, los aspectos técnicos y de uso que ocurrirán durante el
+desarrollo del sistema. Crea por tanto una estructura orientada al
+rendimiento, usabilidad y modificabilidad (\textbf{requisitos de calidad}).
+
+\section{Requerimientos}
+\label{sec:arquitectura:requerimientos}
+
+Objectivos de negocio\textrightarrow Drivers arquitectónicos
+\textrightarrow Deciciones arquitectura\textrightarrow\\ Arquitectura
+documentada\textrightarrow Riesgos Deudas
+\\\par
+Un requerimientos es una \textbf{especificación} que describe alguna
+funcionalidad, atributo o factor de calidad de un sistema software.
+\\\par
+Requerimiento\textrightarrow Diseño\textrightarrow Documentación
+\textrightarrow Evaluación\textrightarrow Implementación
+
+Existe una amalgama de intereses y requerimientos entre los distintos
+actores que usarán el sistema. Si bien todos juegan un papel
+fundamental, a nivel de equipo de desarrollo se deberán satisfacer los
+requerimientos funcionales, es decir, usar una \emph{combobox} para
+elegir los billetes.\cite[p.~14]{IS1ArquitecturaDia1}
+
+La \textbf{ISO 9126} ofrece una descripción de los criterios de
+calidad del software (sección \ref{sec:cv}):\index{ISO
+  9126}\index{criterios de calidad}
+
+\begin{itemize}[noitemsep]
+\item Funcionalidad
+\item Confiabilidad
+\item Usabilidad
+\item Eficiencia
+\item Mantenibilidad
+\item Portabilidad
+\end{itemize}
+
+Los \textbf{drivers} son un subconjunto de requerimientos que definen
+la estructura de un sistema. Existen los drivers \textbf{funcionales},
+\textbf{de atributos de alta calidad}, y los drivers de
+\textbf{restricciones}.\index{drivers}
+
+\begin{description}
+\item[Funcionales] Descomposición del sistema. Relevancia y
+  complejidad.
+\item[Calidad] Los atributos de calidad.
+\item[Restricciones] Técnicas y de gestión.
+\end{description}
+\label{sec:drivers}
+
+\subsubsection{Métodos para identificar drivers arquitectónicos}
+\label{sec:drivers}
+
+Existen diferentes métodos para identificar drivers
+arquitectónicos. Podemos basarnos en \emph{talleres de atributos},
+métodos de diseño o \emph{FURPS}.\index{talleres de atributos}
+
+El propósito de los talleres de atributos es ayudar a elegir la
+arquitectura adecuada para un sistema de Software. El modelo
+\emph{QAW} (Talleres de calidad del Atributo) se centra en los
+requisitos del cliente, y no hace necesaria la existencia previa de
+una arquitectura software.\index{QAW}
+
+\section{Diseño de estructuras}
+\label{sec:arquitectura:diseñoestructura}
+
+El diseño es la especificacione de \textbf{objeto}, creado por algún
+\textbf{agente}, que busca alcanzar ciertos \textbf{objectivos}, en un
+\textbf{entorno} particular, usando un conjunto de
+\textbf{componentes} básicos, satisfaciendo una serie de
+\textbf{requerimientos} y sujetándose a determinadas
+\textbf{restricciones}.
+
+\begin{center}
+  \textit{Teniendo en cuenta lo que nos han pedido, juntar piezas que
+    tenemos teniendo en cuenta nuestras restricciones para describir lo que queremos
+    hacer.}
+  Arquitectura\textrightarrow Interfaces\textrightarrow Detalle de los módulos
+\end{center}
+
+Se diseña en base a los principios de \textbf{modularidad},
+\textbf{alta cohesión y bajo acomplamiento} y de \textbf{mantener las
+  cosas simples}.
+
+Los patrones de diseño juegan un papel fundamental en la espeficiación
+de los drivers.\index{patrones de diseño} Se abstraen problemas ya
+resueltos sin llegar a representar soluciones detalladas para luego
+adaptarlo a cada caso particular. Cuando los diseños son más
+concretos, se llegan a crear elementos software reutilizables que
+proporcionan la funcionalidad genérica enfocándose a la resolución de
+un problema específico. Así nacen los \textbf{frameworks}\index{framework}.
+
+A la hora de diseñan las \textbf{interfaces} se identifican los
+mensajes que se intercambian.\index{interfaces}
+
+\section{Diseño de Arquitecturas}
+\label{sec:arquitectura:diseñoarquitectura}
+
+El problema del diseño de la arquitectura se resuelve mediante diseños
+\textbf{basados en atributos}, \textbf{centrados en arqutectura} o con
+\textbf{vistas y perspectivas}. El método de \textbf{Rozansky \&
+  Woods}.\index{ADD}\index{ACDM}\index{Rozansky \& Woods}
+
+
+\begin{figure}[h]
+  \centering
+  \begin{tabular}[h]{p{2.5cm} || p{3cm} | p{3cm} | p{5cm}}
+    &\textbf{ADD}&\textbf{ACDM}&\textbf{Rozansky \& Woods} \\ \hline
+    Mecánica y enfoque & Diseño iterativo descomponiendo elementos
+                         recursivamente & Iteraciones de diseño,
+                                          documentación y
+                                          evaluación. & Iteraciones de diseño,
+                                                        documentación y
+                                                        evaluación. \\
+    Participantes & Arquitecto & Arquitecto y otros & Arquitecto y
+                                                      otros \\
+    Entradas & Drives & Drivers y alcance & Vistas \\
+    Salidas & Esbozos de vistas & Vistas & Vistas \\
+    Criterios de terminación & Se satisfacen los drivers & Los
+                                                           experimentos
+                                                           no revelan
+                                                           riesgos o
+                                                           son
+                                                           aceptables
+                               & Los interesados están de acerudo en
+                                 que el diseño satisface sus
+                                 preocupaciones. \\
+    Conceptos de diseño utilizados & Técnicas y patrones & Estilos
+                                                           arquitectónicos,
+                                                           patrones y
+                                                           prácticas &
+                                                                       Estilos
+                                                                       arquitectónicos
+                                                                       y patrones.
+    \end{tabular}  
+  \caption[Comparación diseño arquitecturas]{Comparación de métodos de
+    dieseño de arquitecturas}
+  Interesante ver la figura \ref{fig:costemetodologia}
+  \label{fig:comparaciondiseñoarquitectura}
+\end{figure}
+
+
+\section{Documentación}
+\label{sec:documentacion}
+
+\begin{center}
+  \textit{Generación de documentos que describen las estructuras de la
+  arquitectura con el propósito de comunicar efectivamente a los
+  interesados en el sistema.}
+\end{center}
+
+La documentación se apoya en vistas para la descripción de las
+estructuras. Se componen de un diagrama que representa los objetos de
+la estructura y de información textual que ayuda a comprender el
+diagrama.
+
+\index{vista lógica}La \textbf{vista lógica} representa en el diagrama
+\emph{unidades} de implementación, que pueden ser en base a la
+funcionalidad o la responsabilidad.
+
+Otras \emph{vistas} son las de \textbf{comportamiento}, las \textbf{físicas}
+o la de Windows\texttrademark~\footnote{Que no nos gusta.}.
+
+\section{Evaluación}
+\label{sec:arquitectura:evaluacion}
+
+\begin{center}
+  \textit{La evaluación es la técnica para evitar que los defectos lleguen a
+  los usaurios finales o que se presenten en momentos donde
+  corregirlos sea complicado.}
+\end{center}
+
+La evaluación sirve para determinar si el software cumple con los
+criterios de calidad (\ref{sec:software}). Al evaluar un sistema se
+pueden producir \emph{desviaciones} respecto a las necesidades de los
+usuarios o respecto a la construcción correcta del producto. Al
+evaluar las arquitecturas se busca satisfacer los drivers
+arquitectónicos (\ref{sec:drivers}).
+
+\section{Implementación}
+\label{sec:implementacion}
+
+La implementación busca generar diseños detallados de los módulos y
+otros elementos siempre de acuerdo con la arquitectura. Se ajustan los
+diseños y errores, pero no se cambia la arquitectura.
+
+\begin{itemize}[noitemsep]
+\item Diseñar la estructura del sistema basándose en la arquitectura.
+\item Basarse en los requisitos funcionales (\ref{sec:drivers}).
+\item Desarrollar\footnote{Picar código y fixes.}.
+\end{itemize}
+
+La resolución de las desviaciones (\emph{errores}) se resuelve
+mediante controles de calidad en los que se \textbf{verifica el
+  código}, el \textbf{diseño}. Además de realizar \textbf{pruebas} y
+\textbf{auditorías}.
