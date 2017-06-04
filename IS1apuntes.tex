@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[a4paper]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{makeidx}
+
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning}
+
+\usepackage{vhistory}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage[hidelinks]{hyperref}
+
+% \pagestyle{headings}
+
+\addto\captionsspanish{\renewcommand{\chaptername}{Bloque}}
+
+\title{Ingeniería del Software I}
+
+\author{Samuel García \\ Ignacio Ballesteros}
+
+\date{\today}
+\makeindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+	\hfill \today
+
+	\vspace{.2\textheight}
+
+	\begin{center}
+		{\huge\bfseries Ingeniería del Software I\par}
+		\vspace{3cm}
+		Samuel García \par
+		Ignacio Ballesteros \par
+	\end{center}
+
+\end{titlepage}\tableofcontents
+
+
+\chapter{Introducción a la Ingenería del Software}
+\label{chap:introduccion}
+\input{introduccion}
+\chapter{Ingenería de Requisitos}
+\label{chap:requisitos}
+\index{Requisitos}
+
+\chapter{Diseño Estructurado de Alto Nivel}
+\label{chap:estructurado}
+
+\chapter{Objetos}
+\label{chap:objetos}
+\input{objetos}
+\chapter{Arquitectura}
+\label{chap:arquitectura}
+
+Como bien se comentó en el bloque \ref{chap:requisitos}
+
+\printindex
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

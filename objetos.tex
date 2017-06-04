@@ -1,0 +1,116 @@
+% \setlength{\parindent}{4em}
+% \setlength{\parskip}{1em}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "IS1apuntes"
+%%% End:
+
+\section{Orientación a objetos}
+\label{sec:org3620eb4}
+\subsection{Enfoque estructurado}
+\label{sec:orgc590b61}
+Se denomina enfoque estructurado a la forma de pensar el software en
+términos de funciones de transformación de datos (se disocia entre
+funciones y datos, y las tareas se interpretan como una transformación
+de los últimos).
+
+\subsubsection{Ejemplo: Pintar un círculo}
+\label{sec:orge1ddd3a}
+El enfoque estructurado resuelve el problema de pintar un círculo de
+la siguiente forma:
+\begin{itemize}
+\item Usa una definición de círculo que esté acorde con los recursos
+  de software (en este caso la expresión algebraica).
+
+\begin{equation}
+     R^{2} \le (x - x_{0})^{2} + (y - y_{0})^{2}
+\end{equation}
+
+donde el radio R y las coordenadas del centro son las constantes que
+especifican un círculo concreto.
+\item Disocia la definición de círculo en dos partes y las
+  reinterpreta:
+\begin{itemize}
+\item Considera que R y el centro son datos para pintar el círculo y
+  añade el color.
+\item Convierte la expresión declarativa en una función operativa que
+  transforma el conjunto de datos precedentes en (x, y, color) de
+  todos los píxeles para pintar el círculo en la pantalla.
+\end{itemize}
+\item Como resultado final se obtiene un sistema capaz de pintar un
+  círculo en términos de un proceso de transformación de datos.
+\end{itemize}
+
+El sistema software se expresa como una función F(x) que transforma el
+conjunto de datos (R, x\(_{\text{0}}\), y\(_{\text{0}}\)) en otro
+conjunto de datos, en este caso de píxeles.
+
+(insertar figura 1.2)
+
+A este tipo de esquema se le denomina \emph{diagrama de flujo de
+  datos}. \textbf{El diagrama de flujo de datos es un esquema
+  asíncrono} (no expresa secuencias); las flechas sólo indican los
+flujos de datos, no el orden de ejecución.
+
+
+El principal problema del enfoque estructurado es latente en el
+momento en el que queremos añadir más elementos e interactuar con
+ellos, por ejemplo, pintar varios círculos y actuar sobre los mismos
+de forma selectiva, digamos borrar el segundo que se pintó.  Podríamos
+hacer un bucle para crear n círculos, pero si queremos guardarlos
+tendríamos que añadir tantas variables como círculos, con el objetivo
+de retener cada conjunto de constantes. Este sistema es una
+duplicación del sistema para solo un caso.
+
+
+La disgregación de los conceptos en datos y funciones tiene sus pros y
+sus contras, por ejemplo, este enfoque permite trabajar directamente
+con la idea de base de datos o archivo, lo cual puede ser
+beneficioso. Sin embargo, esta disociación implica \textbf{disminuir
+  nuestro nivel de abstracción}.
+\subsection{Enfoque orientado a objetos}
+\label{sec:orgab1dc13}
+El enfoque orientado a objetos es la forma particular de pensar el
+software en términos de elementos que colaboran entre sí para realizar
+tareas.  Este enfoque nos da un nivel de abstracción superior al
+estructurado, asociando cada elemento del problema a un elemento
+software.  Cada elemento software tiene las propiedades íntegras de
+cada elemento del discurso (lo que \emph{hace a una cosa ser una
+  cosa}).
+\subsubsection{Ejemplo: Pintar un círculo}
+\label{sec:orge1a8962}
+En el ejemplo anterior, definimos un objeto \texttt{círculo} que
+cumple las propiedades de un círculo según la definición que hemos
+adaptado para nuestro sistema (en este caso, el objeto contiene un
+centro y un radio) y tiene los mecanismos para pintarse y crearse como
+elemento.
+
+El enfoque de objetos piensa:
+\begin{itemize}
+\item En variables software capaces de recordar las constantes de un
+  círculo, capaces de pintar un círculo y capaces de crearse a sí
+  mismas como variables.
+\item En el sistema software en términos de la interacción de estas variables, dadas sus respectivas capacidades para ejecutar operaciones, es decir, cómo
+relacionar todas las variables para conseguir que se realice la tarea de pintar círculos.
+\end{itemize}
+
+(introducir figura 1.8)
+
+Este esquema muestra el sistema software, donde se aprecian las
+relaciones entre las variables software que ejecutan la tarea de
+pintar un círculo.  Como vemos, el sistema software, aun aplicando el
+mismo algoritmo, tiene una organización diferente, y por tanto sus
+propiedades también varían.
+\subsubsection{Objetos}
+\label{sec:org2b984f4}
+Esto que hemos ido llamando \emph{variables software} se conocen en
+este enfoque como \textbf{objetos}, y amplían la idea de la variable
+software tratada en el enfoque estructurado, ya que tienen capacidad
+de expresar cualquier cosa, incluso operaciones.  Otra definición
+complementaria de objeto es la siguiente: \emph{Un objeto es un
+  elemento software cualitativamente distinto capaz de expresar un
+  concepto más amplio, más ambiguo: cosa}
+
+Los objetos interactúan entre ellos mediante \textbf{mensajes},
+solicitudes a objetos para que ejecuten operaciones.
+
