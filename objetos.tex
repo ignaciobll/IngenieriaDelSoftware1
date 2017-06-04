@@ -8,50 +8,52 @@
 \section{Orientación a objetos}
 \label{sec:org3620eb4}
 \subsection{Enfoque estructurado}
-\label{sec:orgc590b61}
-Se denomina enfoque estructurado a la forma de pensar el software en
-términos de funciones de transformación de datos (se disocia entre
-funciones y datos, y las tareas se interpretan como una transformación
-de los últimos).
+\label{sec:orgc590b61} Se denomina enfoque estructurado a la forma de
+pensar el software en términos de funciones de transformación de datos
+(se disocia entre funciones y datos, y las tareas se interpretan como
+una transformación de los últimos).
 
 \subsubsection{Ejemplo: Pintar un círculo}
-\label{sec:orge1ddd3a}
-El enfoque estructurado resuelve el problema de pintar un círculo de
-la siguiente forma:
+\label{sec:orge1ddd3a} El enfoque estructurado resuelve el problema de
+pintar un círculo de la siguiente forma:
 \begin{itemize}
 \item Usa una definición de círculo que esté acorde con los recursos
-  de software (en este caso la expresión algebraica).
+de software (en este caso la expresión algebraica).
 
-\begin{equation}
-     R^{2} \le (x - x_{0})^{2} + (y - y_{0})^{2}
-\end{equation}
+  \begin{equation} R^{2} \le (x - x_{0})^{2} + (y - y_{0})^{2}
+  \end{equation}
 
-donde el radio R y las coordenadas del centro son las constantes que
+  donde el radio R y las coordenadas del centro son las constantes que
 especifican un círculo concreto.
 \item Disocia la definición de círculo en dos partes y las
-  reinterpreta:
-\begin{itemize}
-\item Considera que R y el centro son datos para pintar el círculo y
-  añade el color.
-\item Convierte la expresión declarativa en una función operativa que
-  transforma el conjunto de datos precedentes en (x, y, color) de
-  todos los píxeles para pintar el círculo en la pantalla.
-\end{itemize}
+reinterpreta:
+  \begin{itemize}
+  \item Considera que R y el centro son datos para pintar el círculo y
+añade el color.
+  \item Convierte la expresión declarativa en una función operativa
+que transforma el conjunto de datos precedentes en (x, y, color) de
+todos los píxeles para pintar el círculo en la pantalla.
+  \end{itemize}
 \item Como resultado final se obtiene un sistema capaz de pintar un
-  círculo en términos de un proceso de transformación de datos.
+círculo en términos de un proceso de transformación de datos.
 \end{itemize}
 
 El sistema software se expresa como una función F(x) que transforma el
 conjunto de datos (R, x\(_{\text{0}}\), y\(_{\text{0}}\)) en otro
 conjunto de datos, en este caso de píxeles.
 
-(insertar figura 1.2)
+\begin{figure}[ht!]  \centering
+\includegraphics[width=0.5\textwidth]{images/fig12}
+  \caption{Sistema software como función de transformación de datos}
+  \label{fig:12}
+\end{figure}
 
 A este tipo de esquema se le denomina \emph{diagrama de flujo de
-  datos}. \textbf{El diagrama de flujo de datos es un esquema
-  asíncrono} (no expresa secuencias); las flechas sólo indican los
-flujos de datos, no el orden de ejecución.
+datos}. \textbf{El diagrama de flujo de datos es un esquema asíncrono}
+(no expresa secuencias); las flechas sólo indican los flujos de datos,
+no el orden de ejecución.
 
+\vspace{5mm}
 
 El principal problema del enfoque estructurado es latente en el
 momento en el que queremos añadir más elementos e interactuar con
@@ -62,55 +64,243 @@ tendríamos que añadir tantas variables como círculos, con el objetivo
 de retener cada conjunto de constantes. Este sistema es una
 duplicación del sistema para solo un caso.
 
+\vspace{5mm}
 
 La disgregación de los conceptos en datos y funciones tiene sus pros y
 sus contras, por ejemplo, este enfoque permite trabajar directamente
 con la idea de base de datos o archivo, lo cual puede ser
 beneficioso. Sin embargo, esta disociación implica \textbf{disminuir
-  nuestro nivel de abstracción}.
+nuestro nivel de abstracción}.
 \subsection{Enfoque orientado a objetos}
-\label{sec:orgab1dc13}
-El enfoque orientado a objetos es la forma particular de pensar el
-software en términos de elementos que colaboran entre sí para realizar
-tareas.  Este enfoque nos da un nivel de abstracción superior al
-estructurado, asociando cada elemento del problema a un elemento
-software.  Cada elemento software tiene las propiedades íntegras de
-cada elemento del discurso (lo que \emph{hace a una cosa ser una
-  cosa}).
+\label{sec:orgab1dc13} El enfoque orientado a objetos es la forma
+particular de pensar el software en términos de elementos que
+colaboran entre sí para realizar tareas.  Este enfoque nos da un nivel
+de abstracción superior al estructurado, asociando cada elemento del
+problema a un elemento software.  Cada elemento software tiene las
+propiedades íntegras de cada elemento del discurso (lo que \emph{hace
+a una cosa ser una cosa}).
 \subsubsection{Ejemplo: Pintar un círculo}
-\label{sec:orge1a8962}
-En el ejemplo anterior, definimos un objeto \texttt{círculo} que
-cumple las propiedades de un círculo según la definición que hemos
-adaptado para nuestro sistema (en este caso, el objeto contiene un
-centro y un radio) y tiene los mecanismos para pintarse y crearse como
-elemento.
+\label{sec:orge1a8962} En el ejemplo anterior, definimos un objeto
+\texttt{círculo} que cumple las propiedades de un círculo según la
+definición que hemos adaptado para nuestro sistema (en este caso, el
+objeto contiene un centro y un radio) y tiene los mecanismos para
+pintarse y crearse como elemento.
 
 El enfoque de objetos piensa:
 \begin{itemize}
 \item En variables software capaces de recordar las constantes de un
-  círculo, capaces de pintar un círculo y capaces de crearse a sí
-  mismas como variables.
-\item En el sistema software en términos de la interacción de estas variables, dadas sus respectivas capacidades para ejecutar operaciones, es decir, cómo
-relacionar todas las variables para conseguir que se realice la tarea de pintar círculos.
+círculo, capaces de pintar un círculo y capaces de crearse a sí mismas
+como variables.
+\item En el sistema software en términos de la interacción de estas
+variables, dadas sus respectivas capacidades para ejecutar
+operaciones, es decir, cómo relacionar todas las variables para
+conseguir que se realice la tarea de pintar círculos.
 \end{itemize}
 
-(introducir figura 1.8)
+\begin{figure}[ht!]  \centering
+\includegraphics[width=0.5\textwidth]{images/fig18}
+  \caption{Sistema software con enfoque de objetos}
+  \label{fig:18}
+\end{figure}
 
 Este esquema muestra el sistema software, donde se aprecian las
 relaciones entre las variables software que ejecutan la tarea de
 pintar un círculo.  Como vemos, el sistema software, aun aplicando el
 mismo algoritmo, tiene una organización diferente, y por tanto sus
 propiedades también varían.
-\subsubsection{Objetos}
-\label{sec:org2b984f4}
-Esto que hemos ido llamando \emph{variables software} se conocen en
-este enfoque como \textbf{objetos}, y amplían la idea de la variable
-software tratada en el enfoque estructurado, ya que tienen capacidad
-de expresar cualquier cosa, incluso operaciones.  Otra definición
-complementaria de objeto es la siguiente: \emph{Un objeto es un
-  elemento software cualitativamente distinto capaz de expresar un
-  concepto más amplio, más ambiguo: cosa}
+\subsection{Objetos}
+\label{sec:org2b984f4} Esto que hemos ido llamando \emph{variables
+software} se conocen en este enfoque como \textbf{objetos}, y amplían
+la idea de la variable software tratada en el enfoque estructurado, ya
+que tienen capacidad de expresar cualquier cosa, incluso operaciones.
+Otra definición complementaria de objeto es la siguiente: \emph{Un
+objeto es un elemento software cualitativamente distinto capaz de
+expresar un concepto más amplio, más ambiguo: cosa.}
+
+\vspace{5mm}
 
 Los objetos interactúan entre ellos mediante \textbf{mensajes},
-solicitudes a objetos para que ejecuten operaciones.
+solicitudes a objetos para que ejecuten operaciones.  Una buena
+analogía de objetos y mensajes es el teatro, los objetos son
+\emph{actores} y los mensajes son \emph{su diálogo}; el programa
+describe a los actores, lo que tienen que hacer y decir.
 
+\subsubsection{Propiedades de los objetos} Los objetos son definidos
+por su nombre, asociado con una dirección de la memoria de la máquina.
+Esta definición puede considerar además las propiedades que,
+generalmente, se clasifican en \emph{atributos y operaciones}, también
+denominadas \emph{métodos}.
+\begin{itemize}
+\item \textbf{Atributo:} Propiedad de un objeto, que está compuesto
+por un objeto o por una variable software tradicional. Los lenguajes
+OOP puros (como SmallTalk) solo admiten objetos como atributos, pero
+los lenguajes híbridos (como Java) también admiten variables software
+tradicionales.
+\item \textbf{Operación: } Propiedad de un objeto que expresa su
+capacidad para ejecutar la rutina indicada por la misma. Las
+operaciones representan cualquier código capaz de ejecutar acciones.
+\end{itemize}
+
+\vspace{5mm}
+
+Los lenguajes de programación acostumbran a distinguir los atributos
+de las operaciones para elevar la eficiencia de compilación, pero en
+principio, \textbf{no hay razón para distinguirlos}.
+
+\vspace{5mm}
+
+\paragraph{Globalidad de los atributos y operaciones:} Los atributos
+de un objeto son globales para todas las operaciones del mismo. Esto
+es, cualquier línea de código de cualquier método de un objeto tiene
+acceso inmediato a todos los atributos del propio objeto. Esto
+facilita el acceso a los atributos, pero tiene los siguientes
+inconvenientes:
+\begin{itemize}
+\item Cuando una operación de un objeto quiere usar otra operación del
+mismo, esta operación no conoce cómo usarla, ya que en la cabecera de
+la operación llamada no se refleja la relación con los atributos del
+objeto, y podría interceder en el uso de los atributos de la operación
+llamante.
+\item Al modificar alguna línea de código de una operación debemos
+revisar todas las líneas de código de todas las operaciones, ya que
+cambiar el comportamiento de una operación que a priori puede ser
+necesaria para el resto de operaciones podría desencadenar en un mal
+funcionamiento del objeto.
+\end{itemize}
+
+\vspace{5mm}
+
+\paragraph{Visibilidad de los atributos y operaciones:} Los objetos
+son, de una forma coloquial, \emph{parcelas bien definidas};
+accesibles desde dentro pero no tan fácilmente desde fuera. El acceso
+desde fuera está regulado por un "control de visibilidad".
+Los elementos designados como \emph{públicos} son accesibles a todos
+los objetos del sistema software. Los \emph{privados} son accesibles
+sólo desde el propio objeto.
+
+\subsubsection{Sobre la ambigüedad} Una de las característica más
+importantes del enfoque orientado a objetos es la capacidad de éstos
+para expresar alternativas o significados diversos, lo que comúnmente
+llamamos \textbf{ambigüedad}.
+
+\vspace{5mm}
+
+El enfoque estructurado utiliza dato y función de transformación de
+datos como elementos del sistema software, mientras el enfoque de
+objetos utiliza los elementos objeto, con el significado de
+\emph{cosa}, y mensaje con el significado de solicitud de servicio a
+una variable.  El significado ambiguo de \emph{cosa} que tienen los
+objetos nos permite hacer un diseño estructurado con aspecto (ropaje?)
+de objetos, pero no al contrario (diseño de objetos con aspecto
+estructurado).
+
+\vspace{5mm}
+
+\textbf{El enfoque de objetos se acomoda mejor a la diversidad de
+problemas que aborda el software.}  Los objetos son más tolerantes
+para expresar la idea general de función que el enfoque estructurado,
+el cual está obligado a expresar esa función en términos de “entrada,
+proceso y salida”.  No obstante, esta mayor libertad de expresión
+tampoco es gratis siempre. A menudo hay que aceptar cualidades
+“extrañas” como la capacidad de pintarse, ampliarse, moverse,
+borrarse, etc.  que tienen los círculos software, para ajustarse al
+enfoque.
+
+\vspace{5mm}
+
+La \textbf{ambigüedad del enfoque de objetos} también facilita que un
+\textbf{elemento software}, por sí solo, \textbf{exprese completamente
+un concepto}, por ejemplo círculo, mientras que el enfoque
+estructurado obliga, muchas veces, a disociarlos en funciones y datos.
+
+
+\begin{figure}[ht!]  \centering
+\includegraphics[width=0.5\textwidth]{images/fig111}
+  \caption{Aumento de la capacidad de ambigüedad en elementos
+software}
+  \label{fig:111}
+\end{figure}
+
+La figura muestra la evolución del software hacia el aumento de la
+ambigüedad de sus elementos primarios.  También nos muestra claramente
+qué es un TAD, es decir, un \emph{tipo abstracto de datos}. Estos TAD
+\textbf{no se consideran objetos}, ya que, a diferencia de éstos,
+siempre deben ser datos (un objeto no tiene por qué ser un dato, puede
+ser cualquier cosa, no está comprometido a desempeñar dicha función ni
+ninguna en particular).
+
+\subsubsection{Objetos vs Realidad} Gracias a la mayor capacidad
+expresiva de los objetos se dice a menudo que los objetos reflejan
+mejor la realidad.  Pero esta idea perjudica, más que beneficia porque
+reflejar la realidad:
+\begin{itemize}
+\item No es el propósito de los sistemas software, salvo que sean de
+simulación.
+\item Dificulta los cambios en los sistemas software.
+\item ¿Qué significa? La realidad varía según el espectador.
+\end{itemize}
+
+\newpage
+
+\subsection{Representación gráfica de los objetos}
+En este apartado veremos varios tipos de gráficos para representar
+objetos, sus atributos, operaciones y la interacción entre ellos (es
+decir, los mensajes).
+\subsubsection{UML (Unified Modelling Language)}
+UML es un sistema de símbolos y diagramas (un lenguaje) que sirve para
+expresar (modelar) los diseños de los sistemas software. La palabra
+unificado refleja el acuerdo de sus autores.
+
+\paragraph{Objetos:}
+UML representa a los objetos mediante \textbf{cajas}. Si se usa la
+definición extendida de objeto, la caja marca tres zonas: la superior
+contiene, subrayado, el nombre del objeto; la zona central contiene
+los atributos y la inferior los métodos u operaciones. En caso de usar
+la definición compacta de objeto, la caja solo contiene la zona
+superior. En UML los elementos públicos son diferenciados de los
+privados según el símbolo que precede su nombre; \textrm{+} para los públicos
+y \textrm{-} para los privados.
+
+\begin{figure}[ht!]  \centering
+\includegraphics[width=0.5\textwidth]{images/fig21}
+  \caption{Representación de un objeto en UML}
+  \label{fig:21}
+\end{figure}
+
+\vspace{5mm}
+
+\paragraph{Mensajes:}
+UML representa los mensajes mediante líneas dirigidas etiquetadas con
+el nombre de su operación, \textbf{desde el llamante al llamado}.
+
+\begin{figure}[ht!]  \centering
+\includegraphics[width=0.3\textwidth]{images/fig22}
+  \caption{Representación de un mensaje en UML}
+  \label{fig:22}
+\end{figure}
+
+\paragraph{Diagrama de secuencias:}
+Los objetos que participan en la interacción se dibujan,
+horizontalmente, en la parte superior del diagrama a través de sus
+esquemas simplificados (cajas conteniendo sólo el nombre
+subrayado). Debajo de cada objeto se dibuja una línea vertical
+discontinua llamada línea de vida que indica, en el eje tiempo, la
+existencia del objeto.
+Los mensajes se colocan entre las líneas de vida de los objetos,
+siguiendo la secuencia de ejecución. Si se quiere resaltar la
+devolución de algún valor, se puede dibujar una flecha discontinua
+apuntando hacia el objeto emisor, etiquetada con el nombre del valor
+de retorno.
+
+\begin{figure}[ht!]  \centering
+\includegraphics[width=0.5\textwidth]{images/fig23}
+  \caption{Diagrama de secuencias en UML}
+  \label{fig:23}
+\end{figure}
+
+Para indicar la creación o destrucción de un objeto se utilizan,
+respectivamente, las etiquetas estereotipadas \textrm{<<create>>} y
+\textrm{<<destroy>>} en el mensaje que se le envía al objeto. La
+creación de un objeto se distingue dirigiendo el mensaje a la caja que
+representa al objeto. La destrucción de un objeto se muestra dibujando
+una X grande al final de su línea vida.
