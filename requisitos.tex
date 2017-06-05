@@ -1,0 +1,240 @@
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "IS1apuntes"
+%%% End:
+
+La IR trata de los principios, métodos, técnicas y herramientas que
+permiten descubrir, documentar y mantener los requisitos para sistemas
+basados en computadora, de forma sistemática y repetible.
+
+\section{Requisitos}
+
+Definición formal de Jackson y Zave:
+
+Todo problema software consiste en configurar una máquina para que ejerza unos efectos R en
+un dominio K. La conexión de la máquina con el dominio se realiza a través de una interfaz S.
+
+\begin{itemize}[noitemsep]
+\item Los efectos R son los requisitos: Necesidades, metas,
+  objetivos. Expresan ideas que no son una realidad ahora mismo, pero
+  lo serán en un futuro, una vez que el sistema esté en
+  funcionamiento.
+\item El conocimiento del dominio K describe el contexto. Expresa
+  realidades actuales, cosas que son verdad independientemente de la
+  existencia o inexistencia del sistema.
+\item La máquina (hw+sw) es la que realizará los requisitos R, gracias
+  a S, que describe la conexión con el dominio.  K. Por tanto, S
+  describe el comportamiento externo (observable) del sistema.
+\item Idealmente: $K$ y $S \implies R$
+\end{itemize}
+
+Pirámide de \textbf{Leffingwell-Widrig}:
+\begin{itemize}[noitemsep]
+\item En primer lugar, las necesidades (needs), que son
+objetivos a muy alto nivel del producto, y no debería
+haber más de 3 ó 4.
+\item Las features son una descripción breve, en lenguaje del
+usuario, de las capacidades de alto nivel de un producto.
+\item Finalmente, los requisitos software, en la base de la
+pirámide, son descripciones más técnicas acerca de cómo
+el producto realiza las features.
+\end{itemize}
+
+
+\subsubsection{Requisitos funcionales y no funcionales}
+\label{sec:requisitos:funcionales-nofuncionales}
+
+Los requisitos \textbf{funcionales} describen los servicios mientras que los
+requisitos no funcionales son restricciones sobre los requisitos
+funcionales.
+
+Tipos de requisitos \textbf{no funcionales} (definiciones informales):
+\begin{itemize}[noitemsep]
+\item Fiabilidad (reliability): Es el grado con que un sistema cumple, o no, sus requisitos.
+\item Seguridad (security): Hace referencia a la seguridad frente a ataques por parte de humanos o software malicioso.
+\item Seguridad (safety): Hace referencia a la incapacidad del sistema de provocar accidentes.
+\item Usabilidad: Grado de integración del sistema en las tareas que realiza el usuario.
+\item Robustez: Capacidad del sistema de resistir situaciones extremas de todo tipo.
+\item Disponibilidad (availability): Hace referencia al tiempo durante el cual el sistema no es utilizable.
+\item Rendimiento (performance): Capacidad de hacer las tareas con el menor consumo de recursos posible.
+\item Tiempo de respuesta: Latencia entre una solicitud y la respuesta dada por el sistema.
+\item Capacidad: Cantidad de usuarios que pueden utilizar el sistema al mismo tiempo.
+\item Throughput: Cantidad de datos o transacciones procesadas por unidad de tiempo
+\item Testabilidad: Capacidad de ser probado con facilidad
+\item Portabilidad: Capacidad de ser transformado con facilidad a otra plataforma hw/sw.
+\end{itemize}
+
+\subsubsection{Proceso de Requisitos}
+\label{sec:proceso-de-requisitos}
+
+\subsubsection{Educción de Requisitos}
+\label{sec:educcion}
+
+Se orienta a la captura y descubrimiento de los requisitos. Para ello
+se identifica a los interesados (stakeholders\footnote{Un stakeholders
+  es toda aquella persona que se ve afectada por la existencia del
+  futuro sistema}) y se establecen las primeras relaciones entre ellos
+y el equipo de desarrollo.
+
+Los requisitos pueden proceder de:
+\begin{itemize}[noitemsep]
+\item Metas
+\item Conocimiento del dominio de la aplicación. Interesados: Afectados por el cambio
+\item El entorno físico que rodea al sistema
+\item La organización
+\end{itemize}
+
+Técnicas de educción:
+\begin{itemize}[noitemsep]
+\item Preguntas Libres de Contexto
+\item Brainstorming
+\item Creatividad
+\item Entrevistas
+\item Observación y análisis de tareas
+\item Casos de uso / Escenarios
+\item Prototipado
+\end{itemize}
+
+\section{Análisis de Requisitos}
+\label{sec:requisitos:analisis}
+
+El Análisis de Requisitos consiste en detectar y resolver conflictos
+entre los requisitos identificados, en precisar los límites del
+sistema, precisar la interacción con su entorno, trasladar los
+requisitos de usuario a requisitos implementables en software, etc. Se
+realizan tres (sub)tareas fundamentales: \textbf{Clasificación, Modelización y
+Negociación}.
+
+\subsubsection{Clasificación}
+\label{sec:requisitos:analisis:clasificacion}
+
+Se clasifican en funcionales / no funcionales:
+\begin{itemize}[noitemsep]
+\item Por prioridades.
+\item Por coste de implementación.
+\item Por niveles (alto nivel, bajo nivel).
+\item Según su volatilidad/estabilidad. Los volátiles son aquellos que
+  posiblemente pierdan su razón de ser en el futuro, normalmente
+  debido a cambios en políticas o en los procesos
+\item de gestión.
+\item En requisitos sobre el proceso o sobre el producto.
+\item Además, en Ingeniería de Sistemas, se realiza la ubicación de
+  requisitos (Requirements Allocation), dónde se decide qué va a
+  realizar el software y qué va a realizar el hardware.
+\end{itemize}
+
+\subsubsection{Modelización}
+\label{sec:requisitos:analisis:modelizacion}
+
+Ciertos aspectos de los requisitos se expresan mejor mediante modelos
+de datos, de control, de estados, de interacción, de objetos, etc.
+
+\subsubsection{Negociación}
+\label{sec:requisitos:analisis:negociacion}
+
+Es durante el análisis cuando se descubren muchos de esos
+conflictos. EL CONFLICTO NO ES RECHAZABLE y no debe resolverse por
+decreto, sino mediante un proceso de negociación. Desde este punto de
+vista, los conflictos son positivos, pues SON FUENTE DE NUEVOS
+REQUISITOS. Los acuerdos alcanzados deben ser convenientemente
+anotados, favoreciéndose así la trazabilidad de los requisitos a sus
+orígenes.
+
+\section{Especificación de Requisitos}
+\label{sec:requisitos:especificacion}
+
+La especificación establece el almacenamiento de requisitos en algún
+medio (electrónico o no) que permita su distribución, gestión,
+impresión, búsquedas, etc.
+
+El documento es el modo habitual de guardar y comunicar requisitos. Es
+buena práctica utilizar, al menos, dos documentos, a distinto nivel de
+detalle.
+
+\begin{description}[noitemsep]
+\item[DRU, Documento de Requisitos de Usuario (URD)] El DRU se escribe
+  desde el punto de vista del usuario/cliente/interesado. Normalmente
+  los requisitos de usuario, contenidos en la DRU, no poseen demasiado
+  nivel de detalle (serían features, en su mayor parte). Se incluye la
+  descripción del problema actual (razones por las que el sistema de
+  trabajo actual es insatisfactorio) y las metas que se espera lograr
+  con la construcción del nuevo sistema.
+\item[ERS, Especificación de Requisitos de Software (SRS)] La ERS
+  desarrolla mucho más los contenidos de la DRU. Los requisitos del
+  software contenidos en la ERS son, por tanto, más detallados.
+\end{description}
+
+Llegado el momento de elaborar un documento en papel o, dicho de otra
+forma, llegado el momento de volcar en papel un subconjunto de los
+requisitos almacenados, de manera que las partes implicadas puedan
+firmarlo a la manera de un contrato, hay varias formas de organizar
+tal documento. Lo normal es seguir los estándares del IEEE.
+
+Una ERS de calidad debería poseer, entre otros, los siguientes atributos:
+
+\begin{itemize}[noitemsep]
+\item No ambigua
+\item Completa
+\item Correcta
+\item Comprensible
+\item Verificable
+\item Consistente
+\item Independiente del diseño
+\item Anotada por importancia relativa
+\item Anotada por estabilidad relativa
+\item Anotada por versión
+\item Expresada a distintos niveles de abstracción
+\item Precisa
+\item Trazable
+\item Trazada
+\item Con referencias cruzadas
+\end{itemize}
+
+\subsubsection{Validación de Requisitos}
+\label{sec:requisitos:validacion}
+
+El objetivo de la validación es descubrir problemas en el subconjunto
+de requisitos que han sido seleccionados para su inclusión en la ERS,
+antes de comprometer recursos a su implementación.
+
+Durante la validación, el documento debe revisarse para descubrir
+omisiones, conflictos, ambigüedades, y para comprobar su calidad y su
+grado de adhesión a estándares. La fórmula más empleada para
+validación son las llamadas Revisiones de Validación (Reviews). En
+ellas, un grupo de personas (incluyendo usuarios) se ocupan de revisar
+el documento de requisitos paraencontrar problemas. Estas reviews no
+se hacen a ciegas, pues se suelen utilizar listas de comprobación
+(checklists) que nos dicen qué es lo que hay que buscar.
+
+\subsubsection{Gestión de Requisitos}
+\label{sec:requisitos:gestion}
+
+La Gestión de Requisitos consiste en gestionar los cambios a los
+requisitos. Esto implica:
+
+\begin{itemize}[noitemsep]
+\item Definir procedimientos de cambios
+\item Cambiar los atributos de los requisitos afectados (prioridad, versión, etc.)
+\item Mantener la trazabilidad
+\item Control de versiones del documento de requisitos
+\end{itemize}
+
+Hay dos conceptos importantísimos en Gestión de Requisitos: la \textbf{trazabilidad} y las \textbf{líneas base}.
+
+La trazabilidad hace referencia al establecimiento de enlaces entre
+unas cosas y otras. En la Gestión de Requisitos se suelen manejar tres
+tipos de trazabilidad:
+
+\begin{description}[noitemsep]
+\item [Trazabilidad hacia atrás] Dado un requisito, nos permite conocer
+  su origen
+\item [Trazabilidad hacia delante] Dado un requisito, podemos conocer
+  qué artefactos generados durante el proceso software se encuentran
+  relacionados con él.
+\item [Trazabilidad interna] Dado un requisito, la trazabilidad interna
+  indica qué otros requisitos se encuentran relacionados con él.
+\end{description}
+
+Una línea base (\textbf{baseline}) es un conjunto de requisitos que, mediante acuerdo entre las partes
+implicadas, se ha decidido no modificar.
