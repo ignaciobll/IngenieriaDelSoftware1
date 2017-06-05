@@ -160,7 +160,7 @@ inconvenientes:
   mismo, esta operación no conoce cómo usarla, ya que en la cabecera de
   la operación llamada no se refleja la relación con los atributos del
   objeto, y podría interceder en el uso de los atributos de la operación
-  llamante.
+  llamante.\footnote{Mutabilidad en los atributos del objeto.}
 \item Al modificar alguna línea de código de una operación debemos
   revisar todas las líneas de código de todas las operaciones, ya que
   cambiar el comportamiento de una operación que a priori puede ser
@@ -253,7 +253,8 @@ Como un objeto es una \emph{parcela de software}, se suele decir que
 un objeto \textbf{encapsula} sus atributos y operaciones, lo cual es
 correcto, no distorsiona nuestra analogía con la parcela. No obstante,
 cuando se asocia encapsulado con ocultación de información tenemos un
-problema.\\
+problema.
+
 Es cierto que el enfoque de objetos facilita algunas formas de
 desarrollo de software, como los prototipos evolutivos y el diseño en
 paralelo, pero no son facilidades intrínsecas.\\
@@ -334,7 +335,7 @@ representa al objeto. La destrucción de un objeto se muestra dibujando
 una X grande al final de su línea vida.
 \newpage
 \paragraph{Diagrama de colaboración:}
-Un diagrama de colabroación e sun diagrama de interacción que resalta
+Un diagrama de colabroación es un diagrama de interacción que resalta
 la organización de los objetos que envían y reciben los mensajes. Este
 diagrama muestra un conjunto de objetos, los enlaces entre ellos y los
 mensajes que intercambian.\\

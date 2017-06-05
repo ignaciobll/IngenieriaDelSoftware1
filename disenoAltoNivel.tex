@@ -8,10 +8,14 @@
 % datastore/.style={draw,very thick,shape=datastore,inner sep=.3cm},
 % to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize}
 % }
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "IS1apuntes"
+%%% End:
 
 \section{Introducción}
 
-En la construcción de sistemas software existen dos paradigmas principales, \textbf{estructurado} y \textbf{orientado a objetos}.
+En la construcción de sistemas software existen dos paradigmas principales, \textbf{estructurado} y \textbf{orientado a objetos}\footnote{No se olviden del funcional.}.
 
 El estructurado se basa en:
 
@@ -23,18 +27,18 @@ El estructurado se basa en:
 
 \subsection{Análisis vs Diseño}
 
-Los lenguajes de alto nivel en el pasado son los lenguajes de bajo nivel del futuro, así mismo las técnicas de \textbf{análisis} de ayer son técnicas de \textbf{diseño} de hoy.
+Los lenguajes de alto nivel en el pasado son los lenguajes de bajo nivel del futuro\footnote{Pues eso, funcional.}, así mismo las técnicas de \textbf{análisis} de ayer son técnicas de \textbf{diseño} de hoy.
 
 Los problemas reales de los usuarios son problemas de organización, monitorización, control, etc; Por tanto los problemas no son ni \textit{estructurados} ni \textit{orientados a objetos}, pero las \textbf{soluciones} sí.
 
-El análisis pretende comprender algo que \textbf{ya existe}: estudierlo, delimitarlo, clasificarlo...
+El análisis pretende comprender algo que \textbf{ya existe}: estudiarlo, delimitarlo, clasificarlo...
 
 Son tareas del análisis, por ejemplo:
 
 \begin{itemize}[noitemsep]
-\item Realizar un estudio del mercado entes del lanzamiento de un producto
-\item Encontrar las causas del fracaso de un proyecto software
-\item Estudiar las características del terreno donde se construirá un edificio
+\item Realizar un estudio del mercado entes del lanzamiento de un producto.
+\item Encontrar las causas del fracaso de un proyecto software.
+\item Estudiar las características del terreno donde se construirá un edificio.
 \end{itemize}
 
 En general se encarga de comprender un problema antes de resolverlo \textbf{(requisitos)}.
@@ -50,42 +54,42 @@ Ejemplos de tareas de diseño son:
 
 En genral el diseño se encarga de utilizar cierta tecnología para resolver un problema \textbf{(DFDs, OO)}.
 
-En Ingeniería de Software se denominaba \textit{\textbf{``Análisis''}} de problemas a lo que, en realidad, era un \textit{\textbf{``Diseño''}} de soluciones.
+En Ingeniería de Software se denominaba \textit{\textbf{``Análisis''}} de problemas a lo que, en realidad, era un \textit{\textbf{``Diseño''}} de soluciones.\index{análisis}
 
 \subsection{Enfoque de Yourdon}
 \textit{Nota: A pesar de que el libro de Yourdon se denomina ``Análisis Estructurado Moderno'' lo consideraremos como si fuera diseño. Su técnica no sirve para describir problemas, sino soluciones (tecnologías).}
 
 \begin{itemize}[noitemsep]
-\item Se basa en una serie de notciones bastante conocidas cómo \textbf{DFDs}, \textbf{E/R}, etc.
-\item Se mantiene una relación entre las notaciones
-\item Su objetivo es elaborar un \textbf{``Modelo esencial''} del sistema
-\item No es top-down, sino \textbf{middle-up}, \textbf{middle-down}
-\item La construcción del Diagrama de Flujo de Datos está \textbf{dirigida por acontecimientos}
-\item Pese a ser moderno, es \textbf{antiguo}, pero no tanto como el enfoque puramente \textit{top-down}
+\item Se basa en una serie de notaciones bastante conocidas cómo \textbf{DFDs}, \textbf{E/R}, etc.
+\item Se mantiene una relación entre las notaciones.
+\item Su objetivo es elaborar un \textbf{``Modelo esencial''} del sistema.
+\item No es top-down, sino \textbf{middle-up}, \textbf{middle-down}.
+\item La construcción del Diagrama de Flujo de Datos está \textbf{dirigida por acontecimientos}.
+\item Pese a ser moderno, es \textbf{antiguo}, pero no tanto como el enfoque puramente \textit{top-down}.
 \end{itemize}
 
 \section{Notaciones}
 Las notaciones que describiremos son:
 
 \begin{itemize}[noitemsep]
-\item Diagrama de Fujo de Datos (DFDs)
-\item Diccionario de Datos (DDs)
-\item Especificación de procesos
-\item Entidad/Relación (E/R)
+\item Diagrama de Fujo de Datos (DFDs).
+\item Diccionario de Datos (DDs).
+\item Especificación de procesos.
+\item Entidad/Relación (E/R).
 \end{itemize}
 
 \subsection{Diagramas de Flujo de Datos} %% TODO
-La \textbf{notación} se escribe a continuación:
+La \textbf{notación} se escribe a continuación:\footnote{Por hacer.}
 
 %% TODO notación con tikz
 
 Las \textbf{reglas} son:
 
 \begin{itemize}[noitemsep]
-\item Nombres con significado
-\item Numerar los procesos NO implica secuencia
-\item Evitar DFDs complejos
-\item Todo DFD se redibuja varias veces
+\item Nombres con significado.
+\item Numerar los procesos NO implica secuencia.
+\item Evitar DFDs complejos.
+\item Todo DFD se redibuja varias veces.
 \end{itemize}
 
 La \textbf{regla del balanceo} mantiene la consistencia entre las entradas y salidas de una burbuja padre y las entradas y salidas de todas sus burbujas hijas.
@@ -93,10 +97,10 @@ La \textbf{regla del balanceo} mantiene la consistencia entre las entradas y sal
 Para preservar la \textbf{consistencia lógica} de un Diagrama de Flujo de Datos hay que \textbf{evitar}:
 
 \begin{itemize}[noitemsep]
-\item Sumideros infinitos
-\item Generaciones espontáneas
-\item Flujos y procesos no etiquetados
-\item Cuidado con los almacenes de sólo lectura o sólo escritura
+\item Sumideros infinitos.
+\item Generaciones espontáneas.
+\item Flujos y procesos no etiquetados.
+\item Cuidado con los almacenes de sólo lectura o sólo escritura.
 \end{itemize}
 
 
@@ -126,12 +130,12 @@ Su \textbf{notación} es:
 Son sólo para los procesos (burbujas) de más bajo nivel. Se puede utilizar:
 
 \begin{itemize}[noitemsep]
-\item Lenguaje estructurado
-\item Pre/post
-\item Tablas de decisión
-\item Gráficas
-\item Lenguaje natural
-\item Flow-charts
+\item Lenguaje estructurado.
+\item Pre/post.
+\item Tablas de decisión.
+\item Gráficas.
+\item Lenguaje natural.
+\item Flow-charts.
 \end{itemize}
 
 \textbf{Presentación por niveles}:
