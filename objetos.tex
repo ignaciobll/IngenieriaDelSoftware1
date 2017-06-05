@@ -380,7 +380,7 @@ Las clases enriquecen el enfoque de objetos. Un objeto es una cosa y
 una clase define un conjunto de cosas con iguales propiedades, pero
 valores distintos, por tanto las clases establecen una generalización,
 una \textbf{abstracción} mayor que los objetos. La \textbf{estructura y
-relaciones de los elementos del sistema} software se pueden pensar en
+  relaciones de los elementos del sistema} software se pueden pensar en
 términos de las \textbf{clases}, y dejar los objetos para pensar los diseños
 dinámicos particulares del sistema.
 
@@ -413,6 +413,119 @@ diagramas de secuencias muestran el funcionamiento parcial de los
 mecanismos.
 \begin{figure}[ht!]  \centering
   \includegraphics[width=0.5\textwidth]{images/fig34}
-  \caption{Correspondencia entre diagrama de clases y de secuencia en UML}
+  \caption{Correspondencia entre diagrama de clases y de secuencias en UML}
   \label{fig:34}
 \end{figure}
+
+El diagrama de secuencias define el funcionamiento parcial del
+mecanismo para pintar círculos y el diagrama de clases correspondiente
+describe la organización de los elementos del sistema en términos de
+los conjuntos y sus relaciones.
+
+\subsubsection{Relaciones entre clases}
+El enfoque de objetos acepta cuatro tipos de relaciones entre elementos:
+\paragraph{Dependencia:}
+Se denomina \emph{relación de dependencia} a la relación de una clase
+hacia otra cuando \textbf{los objetos de la primera usan objetos de la
+  segunda}. Esta relación es direccional. \\
+En UML la relación de dependencia se representa con una flecha
+discontinua del elemento dependiente A hacia el elemento independiente
+B (del que usa hacia el usado).
+\paragraph{Asociación:}
+Se denomina \emph{relación de asociación} a la relación de una clase
+hacia otra cuando \textbf{los objetos de la primera contienen
+  atributos que son objetos de la segunda clase}. \\
+En UML la asociación unidireccional se representa con una flecha
+continua de la clase que contiene a la clase cuyos objetos son
+contenidos. La asociación bidireccional se representa con una línea
+continua entre las clases asociadas.
+\paragraph{Agregación:}
+Se denomina \emph{relación de agregación} entre clases cuando hay una
+\textbf{relación “todo/parte” entre los objetos de ambas clases}. \\
+En UML se utiliza una línea continua y un rombo hueco en el lado del
+continente para representar una relación de agregación. \\
+La relación de agregación introduce conceptualmente una estructura
+jerárquica del tipo `está formado por` en el diagrama de clases, lo
+cual la diferencia de las relaciones anteriormente mencionadas (que
+son entre iguales).
+\paragraph{Composición:}
+La \emph{composición} es otra forma de agregación con una fuerte
+relación de pertenencia: Un objeto “parte” sólo pertenece a un objeto
+“todo” y cuando se destruye el objeto “todo” se destruye el o los
+objetos “parte”. \\
+En la composición el objeto “todo” controla la disposición y vida de
+las partes. Hay un cierto efecto transitivo: lo que le ocurre al todo
+le debe ocurrir a las partes. En UML se utiliza una línea continua y
+un rombo relleno en el lado del continente.
+\subsubsection{Herencia}
+Desde el punto de vista formal, se establece que: \\
+La \emph{herencia} es una relación entre clases donde una de ellas
+comparte la estructura o comportamiento definido en una (herencia
+simple) o más clases (herencia múltiple). Las subclases pueden compartir
+atributos y operaciones de sus superclases, y también redefinir
+algunos de estos elementos. \\
+Tenemos que tener mucho cuidado con la herencia, ya que, como ya hemos
+visto, generar dependencias fuertes es malo para el mantenimiento y la
+modificación de nuestro diseño software. \\
+En un UML, la herencia se denota siempre desde la subclase a la
+superclase, con un triángulo hueco a la superclase.
+\subsubsection{Polimorfismo}
+El polimorfismo es una de las cualidades más importantes del enfoque
+de objetos por su aporte a la ambigüedad en el diseño. Se asocia con
+el mecanismo de herencia y permite que la operación definida con la
+misma cabecera sea implementada de maneras distintas.  Formalmente, se
+denomina polimorfismo a la \textbf{capacidad de una operación para manifestar
+  un comportamiento diferente dependiendo del objeto que la ejecuta.}
+\subsubsection{Principio de sustitución de Liskov}
+Después del análisis de los muchos problemas de la herencia, el
+principio de sustitución de Liskov, formulado hace casi dos décadas,
+ofrece un camino útil y confiable para aprovechar los favores de la
+herencia.  Literalmente el principio define, en términos de una
+sustitución segura, cuando una subclase es un subtipo de una
+superclase.  \\
+\emph{“Si para cada objeto O1 de tipo S hay un objeto O2 de tipo T tal
+  que para todos los programas P definidos en términos de T, el
+  comportamiento [interno] de P no cambia cuando O1 es sustituido por
+  O2, entonces S es un subtipo de T.”} \\
+Pero lo interesante es ver el principio de sustitución desde otra
+perspectiva.  \emph{La herencia permite sustituir un objeto por otro,
+  es decir cambiar una tarea por otra, sin riesgo, siempre que las
+  subclases sean subtipos de las superclases.}  \\
+El cumplimiento del principio de sustitución exige que los métodos de
+las clases derivadas deban mantener las siguientes relaciones con los
+métodos de la clase base:
+\begin{itemize}
+\item La clase derivada debe tener un método correspondiente a cada
+  método de la clase base. Este método puede heredarse directamente de
+  la clase base o sobrescribirse.
+\item Cada método de la clase derivada que se corresponda a un método
+  de la clase base debe requerir lo mismo o menos que la clase
+  base. Es decir, si se sobrescribe un método heredado de la clase
+  base, las precondiciones del método deben ser más débiles o
+  permisivas que las del método de la clase base. El nuevo método no
+  puede ser más restrictivo que el método heredado.
+\item Cada método de la clase derivada que se corresponda a un método
+  de la clase base debe garantizar lo mismo o más que la clase
+  base. Es decir, si se sobreescribe un método heredado de la clase
+  base, las postcondiciones del método de las clases derivada deben
+  ser más fuertes o rigurosas que las heredadas de la clase
+  base. Dicho de otro modo, el método de la clase derivada no debe
+  comprometerse a ofrecer mayores resultados o resultados diferentes;
+  sólo debe comprometerse a hacer lo que hace el método de la clase
+  base, garantizando también las propiedades adicionales. Por ejemplo,
+  si un método de la clase base devuelve un número mayor que el
+  argumento que recibe, un método de una clase derivada podría
+  devolver un número primo mayor que el argumento. Pero no estaría
+  permitido que el método de la clase derivada devolviese un número
+  menor o igual que el argumento.
+\item Está permitido que la clase derivada introduzca nuevos métodos
+  adicionales que no aparezcan en la clase base.
+\end{itemize}
+\subsubsection{Clases abstractas}
+Se denomina \emph{método abstracto} al método que sólo expresa la
+cabecera y carece de código interno. Dicho de otro modo, un método que
+está declarado pero no implementado. \\
+Se denomina \emph{clase abstracta} a la clase que contiene al menos un
+método abstracto porque refleja la abstracción de ese método. Por
+ejemplo, la clase Figura. También se les llama clases virtuales o
+diferidas.
