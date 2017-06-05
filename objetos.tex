@@ -18,24 +18,24 @@ una transformación de los últimos).
 pintar un círculo de la siguiente forma:
 \begin{itemize}
 \item Usa una definición de círculo que esté acorde con los recursos
-de software (en este caso la expresión algebraica).
+  de software (en este caso la expresión algebraica).
 
   \begin{equation} R^{2} \le (x - x_{0})^{2} + (y - y_{0})^{2}
   \end{equation}
 
   donde el radio R y las coordenadas del centro son las constantes que
-especifican un círculo concreto.
+  especifican un círculo concreto.
 \item Disocia la definición de círculo en dos partes y las
-reinterpreta:
+  reinterpreta:
   \begin{itemize}
   \item Considera que R y el centro son datos para pintar el círculo y
-añade el color.
+    añade el color.
   \item Convierte la expresión declarativa en una función operativa
-que transforma el conjunto de datos precedentes en (x, y, color) de
-todos los píxeles para pintar el círculo en la pantalla.
+    que transforma el conjunto de datos precedentes en (x, y, color) de
+    todos los píxeles para pintar el círculo en la pantalla.
   \end{itemize}
 \item Como resultado final se obtiene un sistema capaz de pintar un
-círculo en términos de un proceso de transformación de datos.
+  círculo en términos de un proceso de transformación de datos.
 \end{itemize}
 
 El sistema software se expresa como una función F(x) que transforma el
@@ -43,13 +43,13 @@ conjunto de datos (R, x\(_{\text{0}}\), y\(_{\text{0}}\)) en otro
 conjunto de datos, en este caso de píxeles.
 
 \begin{figure}[ht!]  \centering
-\includegraphics[width=0.5\textwidth]{images/fig12}
+  \includegraphics[width=0.5\textwidth]{images/fig12}
   \caption{Sistema software como función de transformación de datos}
   \label{fig:12}
 \end{figure}
 
 A este tipo de esquema se le denomina \emph{diagrama de flujo de
-datos}. \textbf{El diagrama de flujo de datos es un esquema asíncrono}
+  datos}. \textbf{El diagrama de flujo de datos es un esquema asíncrono}
 (no expresa secuencias); las flechas sólo indican los flujos de datos,
 no el orden de ejecución.
 
@@ -70,7 +70,7 @@ La disgregación de los conceptos en datos y funciones tiene sus pros y
 sus contras, por ejemplo, este enfoque permite trabajar directamente
 con la idea de base de datos o archivo, lo cual puede ser
 beneficioso. Sin embargo, esta disociación implica \textbf{disminuir
-nuestro nivel de abstracción}.
+  nuestro nivel de abstracción}.
 \subsection{Enfoque orientado a objetos}
 \label{sec:orgab1dc13} El enfoque orientado a objetos es la forma
 particular de pensar el software en términos de elementos que
@@ -78,7 +78,7 @@ colaboran entre sí para realizar tareas.  Este enfoque nos da un nivel
 de abstracción superior al estructurado, asociando cada elemento del
 problema a un elemento software.  Cada elemento software tiene las
 propiedades íntegras de cada elemento del discurso (lo que \emph{hace
-a una cosa ser una cosa}).
+  a una cosa ser una cosa}).
 \subsubsection{Ejemplo: Pintar un círculo}
 \label{sec:orge1a8962} En el ejemplo anterior, definimos un objeto
 \texttt{círculo} que cumple las propiedades de un círculo según la
@@ -89,16 +89,16 @@ pintarse y crearse como elemento.
 El enfoque de objetos piensa:
 \begin{itemize}
 \item En variables software capaces de recordar las constantes de un
-círculo, capaces de pintar un círculo y capaces de crearse a sí mismas
-como variables.
+  círculo, capaces de pintar un círculo y capaces de crearse a sí mismas
+  como variables.
 \item En el sistema software en términos de la interacción de estas
-variables, dadas sus respectivas capacidades para ejecutar
-operaciones, es decir, cómo relacionar todas las variables para
-conseguir que se realice la tarea de pintar círculos.
+  variables, dadas sus respectivas capacidades para ejecutar
+  operaciones, es decir, cómo relacionar todas las variables para
+  conseguir que se realice la tarea de pintar círculos.
 \end{itemize}
 
 \begin{figure}[ht!]  \centering
-\includegraphics[width=0.5\textwidth]{images/fig18}
+  \includegraphics[width=0.5\textwidth]{images/fig18}
   \caption{Sistema software con enfoque de objetos}
   \label{fig:18}
 \end{figure}
@@ -110,12 +110,12 @@ mismo algoritmo, tiene una organización diferente, y por tanto sus
 propiedades también varían.
 \subsection{Objetos}
 \label{sec:org2b984f4} Esto que hemos ido llamando \emph{variables
-software} se conocen en este enfoque como \textbf{objetos}, y amplían
+  software} se conocen en este enfoque como \textbf{objetos}, y amplían
 la idea de la variable software tratada en el enfoque estructurado, ya
 que tienen capacidad de expresar cualquier cosa, incluso operaciones.
 Otra definición complementaria de objeto es la siguiente: \emph{Un
-objeto es un elemento software cualitativamente distinto capaz de
-expresar un concepto más amplio, más ambiguo: cosa.}
+  objeto es un elemento software cualitativamente distinto capaz de
+  expresar un concepto más amplio, más ambiguo: cosa.}
 
 \vspace{5mm}
 
@@ -132,13 +132,13 @@ generalmente, se clasifican en \emph{atributos y operaciones}, también
 denominadas \emph{métodos}.
 \begin{itemize}
 \item \textbf{Atributo:} Propiedad de un objeto, que está compuesto
-por un objeto o por una variable software tradicional. Los lenguajes
-OOP puros (como SmallTalk) solo admiten objetos como atributos, pero
-los lenguajes híbridos (como Java) también admiten variables software
-tradicionales.
+  por un objeto o por una variable software tradicional. Los lenguajes
+  OOP puros (como SmallTalk) solo admiten objetos como atributos, pero
+  los lenguajes híbridos (como Java) también admiten variables software
+  tradicionales.
 \item \textbf{Operación: } Propiedad de un objeto que expresa su
-capacidad para ejecutar la rutina indicada por la misma. Las
-operaciones representan cualquier código capaz de ejecutar acciones.
+  capacidad para ejecutar la rutina indicada por la misma. Las
+  operaciones representan cualquier código capaz de ejecutar acciones.
 \end{itemize}
 
 \vspace{5mm}
@@ -157,15 +157,15 @@ facilita el acceso a los atributos, pero tiene los siguientes
 inconvenientes:
 \begin{itemize}
 \item Cuando una operación de un objeto quiere usar otra operación del
-mismo, esta operación no conoce cómo usarla, ya que en la cabecera de
-la operación llamada no se refleja la relación con los atributos del
-objeto, y podría interceder en el uso de los atributos de la operación
-llamante.
+  mismo, esta operación no conoce cómo usarla, ya que en la cabecera de
+  la operación llamada no se refleja la relación con los atributos del
+  objeto, y podría interceder en el uso de los atributos de la operación
+  llamante.
 \item Al modificar alguna línea de código de una operación debemos
-revisar todas las líneas de código de todas las operaciones, ya que
-cambiar el comportamiento de una operación que a priori puede ser
-necesaria para el resto de operaciones podría desencadenar en un mal
-funcionamiento del objeto.
+  revisar todas las líneas de código de todas las operaciones, ya que
+  cambiar el comportamiento de una operación que a priori puede ser
+  necesaria para el resto de operaciones podría desencadenar en un mal
+  funcionamiento del objeto.
 \end{itemize}
 
 \vspace{5mm}
@@ -197,7 +197,7 @@ estructurado).
 \vspace{5mm}
 
 \textbf{El enfoque de objetos se acomoda mejor a la diversidad de
-problemas que aborda el software.}  Los objetos son más tolerantes
+  problemas que aborda el software.}  Los objetos son más tolerantes
 para expresar la idea general de función que el enfoque estructurado,
 el cual está obligado a expresar esa función en términos de “entrada,
 proceso y salida”.  No obstante, esta mayor libertad de expresión
@@ -210,14 +210,14 @@ enfoque.
 
 La \textbf{ambigüedad del enfoque de objetos} también facilita que un
 \textbf{elemento software}, por sí solo, \textbf{exprese completamente
-un concepto}, por ejemplo círculo, mientras que el enfoque
+  un concepto}, por ejemplo círculo, mientras que el enfoque
 estructurado obliga, muchas veces, a disociarlos en funciones y datos.
 
 
 \begin{figure}[ht!]  \centering
-\includegraphics[width=0.5\textwidth]{images/fig111}
+  \includegraphics[width=0.5\textwidth]{images/fig111}
   \caption{Aumento de la capacidad de ambigüedad en elementos
-software}
+    software}
   \label{fig:111}
 \end{figure}
 
@@ -235,9 +235,37 @@ mejor la realidad.  Pero esta idea perjudica, más que beneficia porque
 reflejar la realidad:
 \begin{itemize}
 \item No es el propósito de los sistemas software, salvo que sean de
-simulación.
+  simulación.
 \item Dificulta los cambios en los sistemas software.
 \item ¿Qué significa? La realidad varía según el espectador.
+\end{itemize}
+
+\subsubsection{Refactorización}
+Se llama \emph{refactorización} a los procesos que \textbf{modifican
+  el sistema para mejorar alguna cualidad interna sin alterar sus
+  funciones}. A diferencia de la forma tradicional, que aspira
+a alcanzar un diseño perfecto, la refactorización acepta que el
+objetivo es funcionar a tiempo, y que después de probarlo se podrá
+mejorar el funcionamiento del sistema software.
+
+\subsubsection{Encapsulado y principio de ocultación}
+Como un objeto es una \emph{parcela de software}, se suele decir que
+un objeto \textbf{encapsula} sus atributos y operaciones, lo cual es
+correcto, no distorsiona nuestra analogía con la parcela. No obstante,
+cuando se asocia encapsulado con ocultación de información tenemos un
+problema.\\
+Es cierto que el enfoque de objetos facilita algunas formas de
+desarrollo de software, como los prototipos evolutivos y el diseño en
+paralelo, pero no son facilidades intrínsecas.\\
+\textbf{El principio de ocultación establece que:}
+\begin{itemize}
+\item Cada módulo es independiente del código de la implementación
+  de los demás (los clientes se comunican con los servicios por
+  medio de interfaces, que permiten realizar las operaciones sin
+  conocimiento de la modificación del código anteriormente
+  mencionado).
+\item La interfaz o definición de cada módulo debe revelar lo menos
+  posible del trabajo interno del módulo.
 \end{itemize}
 
 \newpage
@@ -262,7 +290,7 @@ privados según el símbolo que precede su nombre; \textrm{+} para los públicos
 y \textrm{-} para los privados.
 
 \begin{figure}[ht!]  \centering
-\includegraphics[width=0.5\textwidth]{images/fig21}
+  \includegraphics[width=0.5\textwidth]{images/fig21}
   \caption{Representación de un objeto en UML}
   \label{fig:21}
 \end{figure}
@@ -274,7 +302,7 @@ UML representa los mensajes mediante líneas dirigidas etiquetadas con
 el nombre de su operación, \textbf{desde el llamante al llamado}.
 
 \begin{figure}[ht!]  \centering
-\includegraphics[width=0.3\textwidth]{images/fig22}
+  \includegraphics[width=0.3\textwidth]{images/fig22}
   \caption{Representación de un mensaje en UML}
   \label{fig:22}
 \end{figure}
@@ -293,7 +321,7 @@ apuntando hacia el objeto emisor, etiquetada con el nombre del valor
 de retorno.
 
 \begin{figure}[ht!]  \centering
-\includegraphics[width=0.5\textwidth]{images/fig23}
+  \includegraphics[width=0.5\textwidth]{images/fig23}
   \caption{Diagrama de secuencias en UML}
   \label{fig:23}
 \end{figure}
@@ -304,3 +332,87 @@ respectivamente, las etiquetas estereotipadas \textrm{<<create>>} y
 creación de un objeto se distingue dirigiendo el mensaje a la caja que
 representa al objeto. La destrucción de un objeto se muestra dibujando
 una X grande al final de su línea vida.
+\newpage
+\paragraph{Diagrama de colaboración:}
+Un diagrama de colabroación e sun diagrama de interacción que resalta
+la organización de los objetos que envían y reciben los mensajes. Este
+diagrama muestra un conjunto de objetos, los enlaces entre ellos y los
+mensajes que intercambian.\\
+\textbf{Un enlace es una instancia de una asociación o dependencia entre
+  clases.} Se representa con una línea continua que une los dos
+objetos.
+
+\begin{figure}[ht!]  \centering
+  \includegraphics[width=0.5\textwidth]{images/fig25}
+  \caption{Diagrama de colaboración en UML}
+  \label{fig:25}
+\end{figure}
+
+Los mensajes se escriben junto a los enlaces, indicando el sentido con
+una flecha que apunta hacia el receptor y numerándolos para expresar
+el orden de ejecución. \\
+El diagrama de colaboración ofrece una vista de conjunto de estructura
+y funcionamiento, pero incide en la estructura, afectando a la
+claridad del funcionamiento (toca seguir la secuencia de mensajes
+saltando de una línea a otra, buscando la numeración).\\
+Además, esta forma de representación dificulta la modificación del
+diseño, por lo que interesa usar este diagrama cuando no interese
+demasiado seguir el funcionamiento y se esperen pocas modificaciones
+del diseño.
+
+\subsection{Clases}
+Una \textbf{clase} es una definición intensiva de un conjunto de
+objetos. Establece las propiedades distitntivas de cualquier elemento
+del conjunto que define.\\
+
+\vspace{5mm}
+
+Considerando las clases se podría decir que un objeto es una
+\textbf{instancia} de una clase o un elemento del conjunto definido
+por una clase. La notación UML de un objeto en particular, teniendo en
+cuenta la clase a la que pertenece, es \texttt{objeto:clase}. Si se
+quiere expresar un objeto cualquiera (anónimo) de una clase, la
+notación sería \texttt{:clase}.
+
+\vspace{5mm}
+
+Las clases enriquecen el enfoque de objetos. Un objeto es una cosa y
+una clase define un conjunto de cosas con iguales propiedades, pero
+valores distintos, por tanto las clases establecen una generalización,
+una \textbf{abstracción} mayor que los objetos. La \textbf{estructura y
+relaciones de los elementos del sistema} software se pueden pensar en
+términos de las \textbf{clases}, y dejar los objetos para pensar los diseños
+dinámicos particulares del sistema.
+
+\vspace{5mm}
+
+La representación de las clases y los objetos coinciden prácticamente
+en el lenguaje UML, con la salvedad de que el nombre de las clases no
+se subraya.
+
+\subsubsection{Diagrama de clases}
+El diagrama de clases expresa la estructura u organización del sistema
+software en términos de las clases. Además de intervenir en el
+funcionamiento, el diseño del diagrama es clave porque expresa la
+organización del sistema, y ésta decide sobre aspectos fundamentales:
+significado, facilidad de desarrollo en paralelo y faciidad de modificación.
+
+\begin{figure}[ht!]  \centering
+  \includegraphics[width=0.5\textwidth]{images/fig33}
+  \caption{Diagrama de clases en UML}
+  \label{fig:33}
+\end{figure}
+
+La figura muestra el diagrama de clases del sistema para dibujar
+círculos. Se aprecian las clases, los elementos que componen cada
+clase y las relaciones entre las clases, así como la visibilidad de
+dichos elementos.\\
+El diagrama de clases complementa a los diagramas de secuencias,
+muestra la forma del soporte de los mecanismos, mientras que los
+diagramas de secuencias muestran el funcionamiento parcial de los
+mecanismos.
+\begin{figure}[ht!]  \centering
+  \includegraphics[width=0.5\textwidth]{images/fig34}
+  \caption{Correspondencia entre diagrama de clases y de secuencia en UML}
+  \label{fig:34}
+\end{figure}
