@@ -6,3 +6,5 @@
 *.out
 *.toc
 /.DS_Store
+*.bbl
+*.blg
