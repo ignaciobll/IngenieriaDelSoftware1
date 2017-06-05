@@ -9,19 +9,22 @@
 % to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize}
 % }
 
-\section{Introducción}
 
-En la construcción de sistemas software existen dos paradigmas principales, \textbf{estructurado} y \textbf{orientado a objetos}.
+%\section{Introducción}
 
-El estructurado se basa en:
+Podemos encontrar dos paradigmas principales para la construcción de sistemas
+software. Por un lado, tenemos el \textbf{Estructurado} y por otro el
+\textbf{Orientado a Objetos}. Asimismo, el Diseño Estructurado se basa en tres
+fundamentos:
 
 \begin{itemize}[noitemsep]
-\item Top-down
+\item \emph{Top-Down}
 \item Sistemas como funciones
-\item Datos y funciones separadas
+\item Datos y funciones separados
 \end{itemize}
 
-\subsection{Análisis vs Diseño}
+
+\section{Análisis vs Diseño}
 
 Los lenguajes de alto nivel en el pasado son los lenguajes de bajo nivel del futuro, así mismo las técnicas de \textbf{análisis} de ayer son técnicas de \textbf{diseño} de hoy.
 
@@ -48,7 +51,7 @@ Ejemplos de tareas de diseño son:
 \item \textbf{Elaborar} los planos de un edificio
 \end{itemize}
 
-En genral el diseño se encarga de utilizar cierta tecnología para resolver un problema \textbf{(DFDs, OO)}.
+En general el diseño se encarga de utilizar cierta tecnología para resolver un problema \textbf{(DFDs, OO)}.
 
 En Ingeniería de Software se denominaba \textit{\textbf{``Análisis''}} de problemas a lo que, en realidad, era un \textit{\textbf{``Diseño''}} de soluciones.
 
@@ -78,6 +81,10 @@ Las notaciones que describiremos son:
 La \textbf{notación} se escribe a continuación:
 
 %% TODO notación con tikz
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{./images/dfds.png}
+\end{figure}
+%% o pantallazo con scrot(o)
 
 Las \textbf{reglas} son:
 
@@ -158,7 +165,7 @@ Yourdon no utiliza atributos en el diagrama pero sí en el Diccionario de Datos.
 
 Las \textbf{relaciones} representan conjuntos de conexiones con sus cardinalidades.
 
-Las \textbf{entidades asociativas} pueden verse como \textit{entidades que contienen los atributos de una relación}. Se utilizan para representar relaciones acerca de las cuales se quiere guardar alguna información. Cómo por ejemplo:
+Las \textbf{entidades asociativas} pueden verse como \textit{entidades que contienen los atributos de una relación}. Se utilizan para representar relaciones acerca de las cuales se quiere guardar alguna información. Como por ejemplo:
 
 \textit{Un cliente compra artículos y queremos guardar información acerca del día y hora de la compra.}
 
@@ -171,6 +178,17 @@ En el Diccionario de Datos tendríamos:
 \item Artículo = @Código + Descripción + Precio
 \item Compra = @DNI + @Código + Día + Hora
 \end{itemize}
+
+A continuación se muestra un ejemplo de E/R con dos entidades
+(Persona y Herramienta) y una relación (Usa):
+
+\begin{center}
+  \begin{tikzpicture}[node  distance =7em]
+    \node[entity] (persona) {Persona};
+    \node[relationship] (usa) [right  of=persona] {Usa} edge (persona);
+    \node[entity] (herramienta) [right  of=usa] {Hrramienta} edge (usa);
+  \end{tikzpicture}
+\end{center}
 
 Las reglas para la construcción de un modelo E/R son las siguientes:
 
@@ -186,7 +204,7 @@ Las reglas para la construcción de un modelo E/R son las siguientes:
 \item Regla heurística: si no somos capaces de imaginar al menos 3 registros de una entidad, malo.
 \end{itemize}
 
-\subsection{Relación entre notaciones}
+\section{Relación entre notaciones}
 
 \textbf{1. Diagrama de Flujo de Datos y Diccionario de Datos}
 
