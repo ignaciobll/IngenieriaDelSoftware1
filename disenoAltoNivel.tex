@@ -23,8 +23,8 @@ fundamentos:
 
 \begin{itemize}[noitemsep]
 \item \emph{Top-Down}
-\item Sistemas como funciones
-\item Datos y funciones separados
+\item Sistemas como funciones.
+\item Datos y funciones separados.
 \end{itemize}
 
 
@@ -51,8 +51,8 @@ El diseño busca crear \textbf{algo que no existe}: elaborar un plan antes de co
 Ejemplos de tareas de diseño son:
 
 \begin{itemize}[noitemsep]
-\item \textbf{Crear} un producto para lanzarlo al mercado
-\item \textbf{Elaborar} los planos de un edificio
+\item \textbf{Crear} un producto para lanzarlo al mercado.
+\item \textbf{Elaborar} los planos de un edificio.
 \end{itemize}
 
 En general el diseño se encarga de utilizar cierta tecnología para resolver un problema \textbf{(DFDs, OO)}.
@@ -148,10 +148,10 @@ Son sólo para los procesos (burbujas) de más bajo nivel. Se puede utilizar:
 \textbf{Presentación por niveles}:
 
 \begin{itemize}[noitemsep]
-\item Los DFDs se presentan TOP-DOWN. Esto NO quiere decir que se construyan TOP-DOWN
-\item El orden de presentación es: Diagrama de Contexto, Diagrama 0, Diagrama 1, etc...
-\item ¿Hasta donde?: Se detiene la descomposición cuando las burbujas pueden especificarse como procesos sencillos (en menos de una página)
-\item Sistemas sencillos: 2-3 niveles en total; medianos: 3-6; grandes: 5-8
+\item Los DFDs se presentan TOP-DOWN. Esto NO quiere decir que se construyan TOP-DOWN.
+\item El orden de presentación es: Diagrama de Contexto, Diagrama 0, Diagrama 1, etc.
+\item ¿Hasta donde?: Se detiene la descomposición cuando las burbujas pueden especificarse como procesos sencillos (en menos de una página).
+\item Sistemas sencillos: 2-3 niveles en total; medianos: 3-6; grandes: 5-8.
 \end{itemize}
 
 
@@ -160,9 +160,9 @@ Son sólo para los procesos (burbujas) de más bajo nivel. Se puede utilizar:
 Las \textbf{entidades}:
 
 \begin{itemize}[noitemsep]
-\item Representan conjuntos de individuos
-\item Cada individuo puede identificarse de manera única
-\item Cada uno juega un papel necesario en el sistema
+\item Representan conjuntos de individuos.
+\item Cada individuo puede identificarse de manera única.
+\item Cada uno juega un papel necesario en el sistema.
 \end{itemize}
 
 Yourdon no utiliza atributos en el diagrama pero sí en el Diccionario de Datos.
@@ -179,8 +179,8 @@ En el Diccionario de Datos tendríamos:
 
 \begin{itemize}[noitemsep]
 \item Cliente = @DNI + Nombre + Dirección + Telf.
-\item Artículo = @Código + Descripción + Precio
-\item Compra = @DNI + @Código + Día + Hora
+\item Artículo = @Código + Descripción + Precio.
+\item Compra = @DNI + @Código + Día + Hora.
 \end{itemize}
 
 A continuación se muestra un ejemplo de E/R con dos entidades
@@ -197,13 +197,13 @@ A continuación se muestra un ejemplo de E/R con dos entidades
 Las reglas para la construcción de un modelo E/R son las siguientes:
 
 \begin{itemize}[noitemsep]
-\item Entrevistas, documentos: permiten la \textbf{identificación} de entidades
+\item Entrevistas, documentos: permiten la \textbf{identificación} de entidades.
 \item Se refinan y desarrollan en paralelo a los DFDs y DDs para mantener consistencia.
 \item Simplificar:
 
-  Eliminar objetos de instancia única
+  Eliminar objetos de instancia única.
 
-  Eliminar relaciones derivadas (calculables)
+  Eliminar relaciones derivadas (calculables).
 
 \item Regla heurística: si no somos capaces de imaginar al menos 3 registros de una entidad, malo.
 \end{itemize}
@@ -213,45 +213,45 @@ Las reglas para la construcción de un modelo E/R son las siguientes:
 \textbf{1. Diagrama de Flujo de Datos y Diccionario de Datos}
 
 \begin{itemize}[noitemsep]
-\item Todo flujo y almacén del DFD deben definirse en el DD y viceversa
+\item Todo flujo y almacén del DFD deben definirse en el DD y viceversa.
 \end{itemize}
 
 \textbf{2. Diagrama de Flujo de Datos y Especificación de Proceso}
 
 \begin{itemize}[noitemsep]
-\item Toda burbuja del DFD debe asociarse con una burbija del nivel inferior, o con una especificación de proceso pero \textbf{no ambos}
-\item Toda especificación de proceso debe asociarse a una burbuja de bajo nivel
-\item Las entradas y salidas deben coincidir
+\item Toda burbuja del DFD debe asociarse con una burbija del nivel inferior, o con una especificación de proceso pero \textbf{no ambos}.
+\item Toda especificación de proceso debe asociarse a una burbuja de bajo nivel.
+\item Las entradas y salidas deben coincidir.
 \end{itemize}
 
 \textbf{3. Especificación de Proceso con Diagrama de Flujo de Datos y Diccionario de Datos}
 
 \begin{itemize}[noitemsep]
-\item Los datos referenciados en la Especificación de Proceso deben coincidir con nombres de flujos o almacenes conectados a la burbuja, ser término local (variable local) o ser un componente del flujo o almacén
+\item Los datos referenciados en la Especificación de Proceso deben coincidir con nombres de flujos o almacenes conectados a la burbuja, ser término local (variable local) o ser un componente del flujo o almacén.
 \end{itemize}
 
-\textbf{4. Diccionario de Datos con Diagrama de Flujo de Datos y Especificación de Proceso}
+\textbf{4. Diccionario de Datos con Diagrama de Flujo de Datos y Especificación de Proceso.}
 
 \begin{itemize}[noitemsep]
-\item Toda entrada del DD debe tener referencia en una Esp. Proc, un DFD o en el propio DD
+\item Toda entrada del DD debe tener referencia en una Esp. Proc, un DFD o en el propio DD.
 \end{itemize}
 
-\textbf{5. Entidad/Relación con Diagrama de Flujo de Datos y Especificación de Proceso}
+\textbf{5. Entidad/Relación con Diagrama de Flujo de Datos y Especificación de Proceso.}
 
 \begin{itemize}[noitemsep]
-\item Todo almacén del DFD debe corresponder a una entidad o entidad asociativa
-\item Toda entidad, relación o entidad asociativa del E/R debe reflejarse en algún almacén del DFD
-\item Los nombres deben coincidir: plural en DFD, singular en ER. Deben definirse ambas en el DD (ver a continuación)
-\item Las instancias de las entidades y las relaciones del ER deben ser creadas o eliminadas por algún proceso
-\item Alguna burbuja del DFD define valores para cada componente de datos
-\item Alguna burbuja del DFD usa los valores de cada componente de datos
+\item Todo almacén del DFD debe corresponder a una entidad o entidad asociativa.
+\item Toda entidad, relación o entidad asociativa del E/R debe reflejarse en algún almacén del DFD.
+\item Los nombres deben coincidir: plural en DFD, singular en ER. Deben definirse ambas en el DD (ver a continuación).
+\item Las instancias de las entidades y las relaciones del ER deben ser creadas o eliminadas por algún proceso.
+\item Alguna burbuja del DFD define valores para cada componente de datos.
+\item Alguna burbuja del DFD usa los valores de cada componente de datos.
 \end{itemize}
 
-\textbf{6. Entidad/Relación: estensiones al Diccionario de Datos}
+\textbf{6. Entidad/Relación: estensiones al Diccionario de Datos.}
 
 \begin{itemize}[noitemsep]
-\item En general, las entidades se nombran en singular y los almacenes en plural
-\item Los atributos de las entidades se pueden especificar en el DD
+\item En general, las entidades se nombran en singular y los almacenes en plural.
+\item Los atributos de las entidades se pueden especificar en el DD.
 \end{itemize}
 
 \section{Proceso de Construcción}
@@ -261,26 +261,26 @@ Consiste en elaborar los dos componentes del llamado \textit{Modelo Esencial}. P
 \subsection{Construcción del Modelo Ambiental}
 
 \begin{itemize}[noitemsep]
-\item Escribir en un párrafo el \textbf{propósito del sistema}
-\item Construir el \textbf{diagrama de contexto} (preliminra identificando las entidades externas)
-\item Construir una \textbf{lista de acontecimientos}
+\item Escribir en un párrafo el \textbf{propósito del sistema}.
+\item Construir el \textbf{diagrama de contexto} (preliminra identificando las entidades externas).
+\item Construir una \textbf{lista de acontecimientos}.
 \end{itemize}
 
 Una \textit{lista de acontecimientos} es una lista narrativa de los estímulos que ocurren en el mundo exterir a los cuales el sistema debe responder. Los hay de tres tipos:
 
 \begin{itemize}[noitemsep]
-\item \textbf{Flujo}: se asocian con la llegada de algún flujo
-\item \textbf{Temporal}: se disparan a una determinada hora
-\item \textbf{Control}: (no los tratamos)
+\item \textbf{Flujo}: se asocian con la llegada de algún flujo.
+\item \textbf{Temporal}: se disparan a una determinada hora.
+\item \textbf{Control}: (no los tratamos).
 \end{itemize}
 
 \textit{Nota: los flujos y los acontecimientos son cosas distintas. No hay corrrespondencia uno-uno entre ambos.}
 
 Los acontecimientos deben de contemplarse de fuera del sistema hacia dentro. Por ejemplo:
 
-\textbf{Mal}: \textit{El sistema recibe el pedido del cliente}
+\textbf{Mal}: \textit{El sistema recibe el pedido del cliente}.
 
-\textbf{Bien}: \textit{El cliente hace un pedido}
+\textbf{Bien}: \textit{El cliente hace un pedido}.
 
 La construcción de la \textit{lista de acontecimientos} se realiza \textbf{a partir} de las \textit{entidades externas}, pero el \textit{Diagrama de Contexto} se puede hacer \textbf{a la vez} que la \textit{Lista de acontecimientos}, se refinan mutuamente.
 
@@ -314,7 +314,7 @@ Consiste en desarrollar un \textit{Daigrama de Flujo de Datos} y un diagrama \te
   - Según se asciende se ocultan los almacenes internos a una agrupación de procesos. \textit{Sugerencia: hacer agregados de 7 +- 2 burbujas}.
 
 \item Puede requerirse nivelación ascendente.
-\item Completar el Diccionario de Datos
-\item Completar la especificación del proceso(al final)
-\item En \textbf{paralelo} acabar el diagrama E/R
+\item Completar el Diccionario de Datos.
+\item Completar la especificación del proceso(al final).
+\item En \textbf{paralelo} acabar el diagrama E/R.
 \end{itemize}
