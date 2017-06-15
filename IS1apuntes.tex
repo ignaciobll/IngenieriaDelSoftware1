@@ -8,7 +8,6 @@
 
 \usepackage{enumitem}
 \usepackage{pgfplots}
-\usetikzlibrary{positioning}
 
 \usepackage{tikz}
 
@@ -32,10 +31,11 @@
 \usepackage{capt-of}
 \usepackage[hidelinks]{hyperref}
 
-\usetikzlibrary{er}
+\usetikzlibrary{er, arrows, positioning, babel}
 \tikzset{total /.style={double  distance =1.5pt}}
 \tikzset{every  entity /.style={draw=orange , fill=orange!20}}
 \tikzset{every  relationship /.style={draw=Chartreuse2, fill=Chartreuse2!20}}
+
 \newcommand{\key}[1]{\underline{#1}}
 
 
@@ -68,6 +68,7 @@
 \chapter{Introducción a la Ingenería del Software}
 \label{chap:introduccion}
 \input{introduccion}
+
 \chapter{Ingenería de Requisitos}
 \label{chap:requisitos}
 \input{requisitos}
