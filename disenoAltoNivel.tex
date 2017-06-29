@@ -1,17 +1,7 @@
-% \usetikzlibrary{arrows.meta, shapes.geometric, shadows.blur, babel}
-% \geometry{a4paper, total={170mm,257mm}, left=25mm, right=25mm, top=25mm}
-% \tikzset{
-% >={Latex[width=2mm,length=2mm]},
-%   % Especificación del estilo de los nodos:
-% process/.style={draw,thick,circle,fill=blue!20},
-% terminador/.style = {rectangle, draw=black, minimum width=4cm, minimum height=1cm, text centered, top color=green!50, bottom color=green!10, drop shadow},
-% datastore/.style={draw,very thick,shape=datastore,inner sep=.3cm},
-% to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize}
-% }
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "IS1apuntes"
-%%% End:
+%%%   Local Variables:
+%%%   mode: latex
+%%%   TeX-master: "IS1apuntes"
+%%%   End:
 
 
 \section{Introducción}
@@ -82,13 +72,24 @@ Las notaciones que describiremos son:
 \end{itemize}
 
 \subsection{Diagramas de Flujo de Datos} %% TODO
-La \textbf{notación} se escribe a continuación:\footnote{Por hacer.}
+La \textbf{notación} se escribe a continuación:
 
-%% TODO notación con tikz
-\begin{figure}[H]
-  \includegraphics[width=\textwidth]{./images/dfds.png}
-\end{figure}
-%% o pantallazo con scrot(o)
+\begin{center}
+  \centering
+  \begin{tabular}[h]{ l r }
+    Procesos                            & \begin{tikzpicture} \draw circle [radius=1.5] node[text width=2cm, text centered] {1\\ Verbo\\ +\\ Nombre}; \end{tikzpicture} \\
+    & \\
+    Flujos                              & \begin{tikzpicture} \draw [->]  (0,0) -- node [midway, above] {Nombre} (3.5,0); \end{tikzpicture} \\
+    & \\
+    Almacenes                           & \begin{tikzpicture} \path[shape=coordinate] (0,0) coordinate(dl) (3.5,0) coordinate(dr)
+                                                                                      (3.5,1) coordinate(ul) (0,1) coordinate(ur);
+                                                                                      \filldraw[thin] (dl) -- (dr) (ul) -- (ur)
+                                                                                      node[midway, below, text width=3.5cm, text centered] {2\\ Nombre en plural};
+                                          \end{tikzpicture} \\
+    & \\
+    Terminadores (Entidades Externas)   & \begin{tikzpicture} \draw rectangle (3.5,1) node[pos=.5] {Nombre}; \end{tikzpicture} \\
+  \end{tabular}
+\end{center}
 
 Las \textbf{reglas} son:
 
@@ -219,7 +220,7 @@ Las reglas para la construcción de un modelo E/R son las siguientes:
 \textbf{2. Diagrama de Flujo de Datos y Especificación de Proceso}
 
 \begin{itemize}[noitemsep]
-\item Toda burbuja del DFD debe asociarse con una burbija del nivel inferior, o con una especificación de proceso pero \textbf{no ambos}.
+\item Toda burbuja del DFD debe asociarse con una burbuja del nivel inferior, o con una especificación de proceso pero \textbf{no ambos}.
 \item Toda especificación de proceso debe asociarse a una burbuja de bajo nivel.
 \item Las entradas y salidas deben coincidir.
 \end{itemize}
@@ -247,7 +248,7 @@ Las reglas para la construcción de un modelo E/R son las siguientes:
 \item Alguna burbuja del DFD usa los valores de cada componente de datos.
 \end{itemize}
 
-\textbf{6. Entidad/Relación: estensiones al Diccionario de Datos.}
+\textbf{6. Entidad/Relación: extensiones al Diccionario de Datos.}
 
 \begin{itemize}[noitemsep]
 \item En general, las entidades se nombran en singular y los almacenes en plural.
@@ -262,11 +263,11 @@ Consiste en elaborar los dos componentes del llamado \textit{Modelo Esencial}. P
 
 \begin{itemize}[noitemsep]
 \item Escribir en un párrafo el \textbf{propósito del sistema}.
-\item Construir el \textbf{diagrama de contexto} (preliminra identificando las entidades externas).
+\item Construir el \textbf{diagrama de contexto} (preliminar identificando las entidades externas).
 \item Construir una \textbf{lista de acontecimientos}.
 \end{itemize}
 
-Una \textit{lista de acontecimientos} es una lista narrativa de los estímulos que ocurren en el mundo exterir a los cuales el sistema debe responder. Los hay de tres tipos:
+Una \textit{lista de acontecimientos} es una lista narrativa de los estímulos que ocurren en el mundo exterior a los cuales el sistema debe responder. Los hay de tres tipos:
 
 \begin{itemize}[noitemsep]
 \item \textbf{Flujo}: se asocian con la llegada de algún flujo.
@@ -315,6 +316,6 @@ Consiste en desarrollar un \textit{Daigrama de Flujo de Datos} y un diagrama \te
 
 \item Puede requerirse nivelación ascendente.
 \item Completar el Diccionario de Datos.
-\item Completar la especificación del proceso(al final).
+\item Completar la especificación del proceso (al final).
 \item En \textbf{paralelo} acabar el diagrama E/R.
 \end{itemize}
