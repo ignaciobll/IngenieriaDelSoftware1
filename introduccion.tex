@@ -3,14 +3,14 @@
 %%% TeX-master: "IS1apuntes"
 %%% End:
 
-\textbf{Ingenería del Software} (\emph{IEEE}) La aplicación de un
+\textbf{Ingeniería del Software} (\emph{IEEE}) La aplicación de un
 enfoque sistemático, disciplinado y cuantificable al desarrollo,
 operación y mantenimiento de \emph{software}.\par
 Las \textbf{Ciencias de la Computación} se preocupa de los fundamentos
 de la teoría; mientras que la Ingeniería del Software de los aspectos
 prácticos.\par
 La \textbf{Ingeniería del Software} estudia los \textbf{productos}
-producidos (ejecutables, módulos, sistemas, liberías...) y los
+producidos (ejecutables, módulos, sistemas, librerías...) y los
 \textbf{procesos} usados para producir esos productos.
 
 \section{La crisis del Software}
@@ -39,15 +39,15 @@ problemas:
 
 Frente a esto, desde la Ingeniería del Software se plantea la mejora
 en las metodologías y el uso de lenguajes de alto nivel (mayor
-abstacción).
+abstracción).
 
-Tras el intento de solucinar estos problemas, el concepto de Ingeniería
+Tras el intento de solucionar estos problemas, el concepto de Ingeniería
 del Software se redefine en:\par
 
 \begin{center}
 \textit{Disciplina que tiene como objetivo la producción de
   Software libre de errores, sin retrasos y dentro del presupuesto;
-  satisfaciendo las necesidades del cliente}  
+  satisfaciendo las necesidades del cliente}
 \end{center}
 
 \section{Costes en la Ingeniería del Software}
@@ -77,7 +77,7 @@ desarrollo.
       every node near coord/.append style={rotate=-90,font=\small, left,shift={(axis direction cs:-3,0)}}
     }}
   \begin{tikzpicture}
-    \begin{axis}[testbar,title=Waterfall,legend style={area legend, at={(0.6,-0.75)}, anchor=north, legend columns=-1}] 
+    \begin{axis}[testbar,title=Waterfall,legend style={area legend, at={(0.6,-0.75)}, anchor=north, legend columns=-1}]
       \addplot[fill=red!40] coordinates{(15,0) };
       \addplot[fill=gray!40] coordinates{(25,0)};
       \addplot[fill=green!40] coordinates{(15,0) };
@@ -86,7 +86,7 @@ desarrollo.
       \addplot[fill=yellow!40] coordinates{(0,0) };
       \legend{Especificación,Diseño,Desarrollo,Integración,Testing,Evolución}
     \end{axis}
-    \begin{axis}[testbar,title = Iterativo] 
+    \begin{axis}[testbar,title = Iterativo]
       \addplot[fill=red!40] coordinates{(10,2) };
       \addplot[fill=gray!40] coordinates{(0,0)};
       \addplot[fill=green!40] coordinates{(0,0) };
@@ -94,17 +94,17 @@ desarrollo.
       \addplot[fill=blue!40] coordinates{(35,2) };
       \addplot[fill=yellow!40] coordinates{(0,0) };
     \end{axis}
-    \begin{axis}[testbar,title = Basado en componentes] 
+    \begin{axis}[testbar,title = Basado en componentes]
       \addplot[fill=red!40] coordinates{(20,4) }; % Especificación
-      \addplot[fill=gray!40] coordinates{(0,0)}; % Diseño 
+      \addplot[fill=gray!40] coordinates{(0,0)}; % Diseño
       \addplot[fill=green!40] coordinates{(30,4) }; % Desarrollo
       \addplot[fill=orange!40] coordinates{(50,4)}; % Integración
       \addplot[fill=blue!40] coordinates{(0,0) }; % Testing
       \addplot[fill=yellow!40] coordinates{(0,0) }; % Evolución
     \end{axis}
-    \begin{axis}[testbar,title = \emph{lifetime systems}] 
+    \begin{axis}[testbar,title = \emph{lifetime systems}]
       \addplot[fill=red!40] coordinates{(5,6) }; % Especificación
-      \addplot[fill=gray!40] coordinates{(0,0)}; % Diseño 
+      \addplot[fill=gray!40] coordinates{(0,0)}; % Diseño
       \addplot[fill=green!40] coordinates{(0,0) }; % Desarrollo
       \addplot[fill=orange!40] coordinates{(0,0)}; % Integración
       \addplot[fill=blue!40] coordinates{(0,0) }; % Testing
@@ -126,8 +126,8 @@ el cambio en dos fases del ciclo de vida:
                     & Probar el cambio. \\
                     & Testing. \\
                     & Instalación del producto en el cliente.
-                                           
-\end{tabular}  
+
+\end{tabular}
 \end{center}
 
 A medida que pasa el tiempo, la cantidad de fallos que aparecen
@@ -152,21 +152,21 @@ para el uso \textbf{general}. Esto está también relacionado con que
 los productos de software sean \textbf{genéricos} o \textbf{a medida}.
 
 Dependiendo del producto desarrollado, el software puede entrar en
-categorías como: tiempo real, negocios, científico, emebido, PC, IA,
+categorías como: tiempo real, negocios, científico, embebido, PC, IA,
 Web...
 
 Los atributos de un \textbf{buen Software} varían según las perspectivas:
 \index{buen Software}
 \begin{center}
 \begin{tabular}[h]{p{5cm} | p{5cm}}
-  \textbf{Usuario} & \textbf{Desarrolador} \\ \hline
+  \textbf{Usuario} & \textbf{Desarrollador} \\ \hline
   Exactitud & Consistencia \\
   Confiabilidad & Comprensibilidad \\
   Eficiencia & Capacidad de ser probado \\
   Mantenibilidad & Compacidad \\
   Usabilidad & Compatibilidad \\
-  Robustez & 
-\end{tabular}  
+  Robustez &
+\end{tabular}
 \end{center}
 
 \section{Procesos en el Software}
@@ -222,7 +222,7 @@ Para la realización del Software tendremos que tener en cuenta:
 \item Calidad (ISO).
   \begin{itemize}
   \item Funcionalidad, Fiabilidad, Usabilidad, Eficiencia,
-    Manteniblidad, Portabilidad.
+    Mantenibilidad, Portabilidad.
   \end{itemize}
 \item Consistencia.
 \item Tasa de cambio.
@@ -243,7 +243,7 @@ Existen distintos \emph{ciclos de vida}, nombrados como modelos
 \item Prototipado (puede ser incluido en los anteriores modelos).
 \end{itemize}
 
-Estos modelos tienen un equilibrio entre los siguietnes factores:
+Estos modelos tienen un equilibrio entre los siguientes factores:
 \begin{itemize}[noitemsep]
 \item Velocidad de desarrollo.
 \item Calidad.
@@ -252,3 +252,4 @@ Estos modelos tienen un equilibrio entre los siguietnes factores:
 \item Exposición al riesgo.
 \item Relaciones públicas.
 \end{itemize}
+% LocalWords:  testbar PC IA Confiabilidad Usabilidad Prototipado
